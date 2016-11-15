@@ -7,7 +7,7 @@ import * as actions from './actions/catActions.js'
 
 class App extends Component {   
   componentDidMount() {
-    if (this.props.cats.length === 0) {
+    if (this.props.catPics.length === 0) {
       this.props.actions.fetchCats()
     }
   }
@@ -21,19 +21,19 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
-        <CatList cats={this.props.cats} />
+        <CatList catPics={this.props.catPics} />
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-  return {cats: state.cats}
+  return {catPics: state.cats}
 }
 
 function mapDispatchToProps(dispatch) {
   return {actions: bindActionCreators(actions, dispatch)}
 }
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)
 
