@@ -8,6 +8,7 @@ import * as actions from './actions/catActions.js'
 class App extends Component {   
   componentDidMount() {
     if (this.props.catPics.length === 0) {
+      console.log('in component did mount')
       this.props.actions.fetchCats()
     }
   }
@@ -28,6 +29,7 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
+  console.log('in map state to props')
   return {catPics: state.cats}
 }
 
