@@ -73,4 +73,4 @@ Once you successfully fetch cats, put them in state, grab them from state and pa
 
 ### The Presentational Component
 
-Your container component, `App`, should render the presentational component, `CatList`. `App` should pass `catPics` down to `CatList` as a prop. `CatList` should iterate over the cat pics and display each cat pic in an image URL. Remember to use debugger to take a look at the `catPics` collection and determine which property of each `catPic` object you will use to populate your `<img>` tag and render the image.
+Your container component, `App`, should render the presentational component, `CatList`. `App` should pass `catPics` down to `CatList` as a prop. `CatList` should iterate over the cat pics and display each cat pic in an image URL. Remember to use debugger to take a look at the `catPics` collection and determine which property of each `catPic` object you will use to populate your `<img>` tag and render the image. yup
