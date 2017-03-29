@@ -2,7 +2,7 @@ import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import * as actions from '../src/actions/catActions'
 import nock from 'nock'
-import expect, { createSpy, spyOn, isSpy } from 'expect'
+import expect from 'expect'
 
 
 // change to redux thunk
