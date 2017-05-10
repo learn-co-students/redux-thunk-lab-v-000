@@ -10,7 +10,6 @@ import {createStore, applyMiddleware, compose } from 'redux'
 import * as actions from '../src/actions/catActions'
 import configureMockStore from 'redux-mock-store'
 
-
 import configureStore from 'redux-mock-store';
 import { Provider, connect} from 'react-redux';
 import rootReducer from '../src/reducers/index'
