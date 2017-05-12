@@ -3,7 +3,7 @@ import { shallow, mount} from 'enzyme'
 import expect, { createSpy, spyOn, isSpy } from 'expect'
 import ReactTestUtils from 'react-addons-test-utils'
 import thunk from 'redux-thunk'
-import { WrapperApp, App } from '../src/App'
+import { ConnectedApp, App } from '../src/App'
 import CatList from '../src/CatList'
 import sinon from 'sinon'
 import {createStore, applyMiddleware, compose } from 'redux'
@@ -23,7 +23,7 @@ function setup() {
   const mockStore = configureStore([]);
   const initialState = {cats: {loading: false, cats: []}}
   const store = mockStore(initialState);
-  const wrapper = shallow(<WrapperApp store={store}/>)
+  const wrapper = shallow(<ConnectedApp store={store}/>)
   return {
     wrapper
   }
