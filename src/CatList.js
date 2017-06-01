@@ -1,12 +1,16 @@
 import React from 'react';
 
 const CatList = (props) => {
+
+  console.log("catlist props are");
+  console.log(props);
+
   return (
     <div>
       {
-        props.catPics.map((cat, index)=> {
+        props.catPics !== [] ? props.catPics.map((cat, index)=> {
           return <img key={index} src={cat.url} />
-        })
+        }) : ''
       }
     </div>
   )
