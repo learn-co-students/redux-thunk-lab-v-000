@@ -36,9 +36,5 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ fetchCats }, dispatch)
-}
 
-
-export const WrapperApp =  connect(mapStateToProps, mapDispatchToProps)(App)
+export const WrapperApp =  connect(mapStateToProps, { fetchCats })(App)
