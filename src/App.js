@@ -37,4 +37,4 @@ const mapStateToProps = state => {
 }
 
 
-export const WrapperApp =  connect(mapStateToProps, { fetchCats })(App)
+export const WrapperApp = connect(mapStateToProps, { fetchCats })(App)
