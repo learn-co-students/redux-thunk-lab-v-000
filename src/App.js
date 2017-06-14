@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import { fetchCats } from './actions/catActions'
 import {Navbar} from 'react-bootstrap'
 import CatList from './CatList'
@@ -13,7 +12,7 @@ export class App extends Component {
 
   render() {
 
-    const { fetchCats, catPics } = this.props
+    const { catPics } = this.props
 
     return (
       <div className="App">
