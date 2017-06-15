@@ -2,15 +2,15 @@
 
 const catsReducer = (state = {
     loading: false,
-    cats: []
+    pictures: []
 },action) => {
     switch (action.type) {
         case 'LOADING_CATS':
-            console.log('loading cats right meow')
-            return {...state, loading: true}
+            
+            return Object.assign({}, state, {loading:true})
         case 'FETCH_CATS':
-            console.log('cats have meow been loaded')
-            return {...state, cats: action.payload};
+            
+            return {loading:false , pictures: action.payload};
         default:
             return state;
     }

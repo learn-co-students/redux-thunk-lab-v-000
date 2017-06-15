@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import CatList from './CatList';
 import {fetchCats} from './actions/catActions'
-class App extends Component {   
-
+export class App extends Component {   
+    
     componentDidMount(){
         console.log("fetching cats")
+        
         this.props.fetchCats();
     }
 
@@ -21,7 +22,7 @@ class App extends Component {
                         </Navbar.Brand>
                     </Navbar.Header>
                 </Navbar>
-                <CatList catPics={this.props.catPics}/>
+                <CatList pictures={this.props.pictures}/>
             </div>
         );
     }
@@ -29,7 +30,7 @@ class App extends Component {
 
 function mapStateToProps(state) {
     return {
-        catPics: state.cats,
+        pictures: state.cats.pictures,
     }
 }
 function mapDispatchToProps(dispatch){
@@ -37,5 +38,6 @@ function mapDispatchToProps(dispatch){
         fetchCats: fetchCats
     }, dispatch);
 }
-const connectedApp = connect(mapStateToProps,mapDispatchToProps)(App)
-export default connectedApp
+
+
+export const WrapperApp = connect(mapStateToProps,mapDispatchToProps)(App)
