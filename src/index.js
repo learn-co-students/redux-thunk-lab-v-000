@@ -1,24 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Provider from 'redux';
-import { createStore, applyMiddleware } from 'redux';
-import {connectedApp as App} from './App';
+import {Provider} from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { browserHistory } from 'react-router';
+import connectedApp from './App';
 import thunk from 'redux-thunk';
-//import {rootReducer} from './reducers'
+import rootReducer from './reducers'
 
-//console.log(typeof rootReducer); // => undefined??
-import { combineReducers } from 'redux'
-import catsReducer from './reducers/cats_reducer'
-
-const rootReducer = combineReducers({
-    cats: catsReducer
-});
-
-const store = createStore(rootReducer, applyMiddleware(thunk))
+const store = createStore(
+  rootReducer,
+  compose(
+    applyMiddleware(thunk),
+    window.devToolsExtension ? window.devToolsExtension() : f => f
+  )
+)
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <connectedApp />
     </Provider>,
     document.getElementById('root')
 );
