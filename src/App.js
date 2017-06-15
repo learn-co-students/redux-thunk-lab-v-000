@@ -5,23 +5,25 @@ import { bindActionCreators } from 'redux';
 import CatList from './CatList';
 import fetchCats from './actions/catActions'
 class App extends Component {   
-  componentDidMount(){
-      this.props.fetchCats();
-  }
-  render() {
-    return (
-      <div className="App">
-        <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">CatBook</a>
-            </Navbar.Brand>
-          </Navbar.Header>
-        </Navbar>
-        <CatList catPics={this.props.catPics}/>
-      </div>
-    );
-  }
+
+    componentDidMount(){
+        this.props.fetchCats();
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <Navbar>
+                    <Navbar.Header>
+                        <Navbar.Brand>
+                            <a href="#">CatBook</a>
+                        </Navbar.Brand>
+                    </Navbar.Header>
+                </Navbar>
+                <CatList catPics={this.props.catPics}/>
+            </div>
+        );
+    }
 }
 
 function mapStateToProps(state) {
@@ -34,4 +36,5 @@ function mapDispatchToProps(dispatch){
         fetchCats: fetchCats
     }, dispatch);
 }
-export default connect(mapStateToProps,mapDispatchToProps)(App)
+const connectedApp = connect(mapStateToProps,mapDispatchToProps)(App)
+export default connectedApp

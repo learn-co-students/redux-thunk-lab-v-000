@@ -8,4 +8,6 @@ const catsReducer = (state = [],action) => {
             return state;
     }
 }
+console.log(typeof catsReducer); // => undefined??
+
 export default catsReducer;
