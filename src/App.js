@@ -3,7 +3,7 @@ import {Navbar} from 'react-bootstrap'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import CatList from './CatList';
-import fetchCats from './actions/catActions'
+//import fetchCats from './actions/catActions'
 class App extends Component {   
 
     componentDidMount(){
