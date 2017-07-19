@@ -1,3 +1,5 @@
+import "isomorphic-fetch"
+
 export function fetchCats() {
   return (dispatch) => {
     dispatch({type: 'LOADING_CATS'})
