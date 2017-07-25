@@ -1,13 +1,8 @@
-/*
-fetch('http://localhost:3000/db').then(response => {
-  return response.json()
-}).then(responseJSON => {
-  return responseJSON.images
-})
-*/
+import fetch from 'isomorphic-fetch';
 
-export default function fetchCats(){
+export function fetchCats(){
     return (dispatch) => {
+        dispatch({type: "LOADING_CATS"});
         return fetch('http://localhost:3000/db').then(response => {
             return response.json()
         }).then(responseJSON => {

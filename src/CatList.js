@@ -12,7 +12,7 @@ const CatList = (props) => {
     }
     return (
         <div>
-            {listCats}
+            {listCats()}
         </div>
     );
 }
