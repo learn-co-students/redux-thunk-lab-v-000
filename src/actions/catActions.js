@@ -1,12 +1,14 @@
-const fetchCats = () => {
+import fetch from 'isomorphic-fetch';
+
+
+export const fetchCats = () => {
   return (dispatch) => {
-    fetch('http://localhost:3000/db')
+    dispatch({type: "LOADING_CATS"})
+    return fetch('http://localhost:3000/db')
            .then(response => {
             return response.json()})
           .then(cats => {
-            return dispatch({type: "FETCH_CATS", payload: cats.images})})
-            .then((action) => action.payload)
+            return dispatch( {type: "FETCH_CATS", payload: cats.images})})
+            .then((action) => action)
   }
 }
-
-export default fetchCats

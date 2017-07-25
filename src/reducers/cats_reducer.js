@@ -1,8 +1,9 @@
 const catsReducer = (state = { loading: false, pictures: [] }, action) => {
   switch (action.type) {
     case 'FETCH_CATS':
-    console.log(state, "our state")
-      return Object.assign({}, state, {pictures: state.cats.concat(action.payload) })
+      return Object.assign({}, state, {loading: false, pictures: action.payload} )
+      case 'LOADING_CATS':
+        return Object.assign({}, state, {loading: true})
       default:
         return state
   }
