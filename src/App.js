@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux'
 import { fetchCats } from './actions/catActions';
 import { CatList } from './CatList';
 
-class App extends Component {   
+export class App extends Component {   
   
   componentDidMount() {
     // fetch the cats
@@ -14,6 +14,7 @@ class App extends Component {
   
   render() {
     const catPics = this.props.catPics;
+    console.log(this.props)
     return (
       <div className="App">
         <Navbar>
@@ -30,7 +31,7 @@ class App extends Component {
 }
 
 function mapDispatchToProps(dispatch){
-  bindActionCreators({fetchCats: fetchCats}, dispatch)
+  return bindActionCreators({fetchCats: fetchCats}, dispatch)
 }
 
 function mapStateToProps(state){

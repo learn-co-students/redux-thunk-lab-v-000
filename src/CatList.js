@@ -5,7 +5,7 @@ export class CatList extends Component {
   
   render() {
     console.log("CatList props:" + this.props)
-    let pics = this.props.catPics.map((cat, index) => <img key={index} src={cat.url} />);
+    let pics = this.props.catPics.pictures.map((cat, index) => <img key={index} src={cat.url} />);
     return(
       { pics }
     );
