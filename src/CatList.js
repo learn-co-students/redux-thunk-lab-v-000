@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+//import { connect } from 'react-redux';
 
-export class CatList extends Component {
-  
-  render() {
-    console.log("CatList props:" + this.props)
-    let pics = this.props.catPics.pictures.map((cat, index) => <img key={index} src={cat.url} />);
-    return(
+const CatList = ({catPics}) => {
+  let pics = catPics.map((cat, index) => {
+    return <li key={index}><img src={cat.url}/></li>
+    } )
+  return (
+    <div>
       { pics }
-    );
-  }
+    </div>
+  )
 }
 
-function mapStateToProps(state){
-  return {catPics: state.catPics}
-}
+//function mapStateToProps(state){
+//  return {catPics: state.catPics}
+//}
  
-export default connect(mapStateToProps)(CatList)
-                       
+//export default connect(mapStateToProps)(CatList)
+export default CatList;

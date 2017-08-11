@@ -24,8 +24,6 @@ function setup() {
   const initialState = {cats: {loading: false, cats: []}}
   const store = mockStore(initialState);
   const wrapper = shallow(<WrapperApp store={store}/>)
-  //console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-  //console.log(wrapper)
   return {
     wrapper
   }
@@ -35,7 +33,6 @@ function setUpMount() {
   // const middlewares = [ thunk ]
   // // const mockStore = configureMockStore(rootReducer, compose(applyMiddleware(middlewares)))({cats: {loading: false, pictures: []}})
 
-  console.log('before mount in test here')
   const component = mount(<App catPics={[]}/>)
   return {component}
 }

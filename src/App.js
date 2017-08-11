@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import {Navbar} from 'react-bootstrap'
 import { bindActionCreators } from 'redux'
 import { fetchCats } from './actions/catActions';
-import { CatList } from './CatList';
+import CatList from './CatList';
 
 export class App extends Component {   
   
@@ -13,18 +13,19 @@ export class App extends Component {
   }
   
   render() {
-    const catPics = this.props.catPics;
-    console.log(this.props)
+    //const catPics = this.props.catPics;
+    //console.log("App state")
+    //console.log(this.state)
     return (
       <div className="App">
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
               <a href="#">CatBook</a>
-              <CatList catPics={catPics} />
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
+        <CatList catPics={this.props.catPics} />
       </div>
     );
   }
@@ -35,10 +36,10 @@ function mapDispatchToProps(dispatch){
 }
 
 function mapStateToProps(state){
-  return {catPics: state.cats}
+  return {catPics: state.cats.pictures}
 }
  
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)
 
 //export default App
 
