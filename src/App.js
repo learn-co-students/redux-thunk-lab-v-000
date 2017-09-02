@@ -1,9 +1,33 @@
 import React, { Component } from 'react';
-import {Navbar} from 'react-bootstrap'
+import {Navbar} from 'react-bootstrap';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+//import fetchCats from './actions/catActions';
+import CatList from './CatList'
+import * as actions from './actions/catActions.js'
 
-class App extends Component {   
-  
+
+class App extends Component {
+
+  // componentDidMount(){
+  //   if (this.props.catPics.length === 0) {
+  //     console.log('componentDidMount')
+  //     //console.log("THIS PROPS", this.props)
+  //     this.props.actions.fetchCats()
+  //   }
+  // }
+
+  componentDidMount() {
+    if (this.props.catPics.length === 0) {
+      console.log('in component did mount')
+      this.props.actions.fetchCats()
+    }
+  }
+
   render() {
+
+    //const {catPics} = this.props
+    // debugger
     return (
       <div className="App">
         <Navbar>
@@ -13,12 +37,28 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
+        <CatList catPics={this.props.catPics}/>
       </div>
     );
   }
 }
 
 
+const mapStateToProps = (state) => {
+  //debugger
+  return {
+    catPics: state.cats.pictures
+  }
+}
 
-export default App
+const mapDispatchToProps = (dispatch) => {
+  return {actions: bindActionCreators(actions, dispatch)}
+  // return {
+  //   actions: bindActionCreators({
+  //     fetchCats: fetchCats
+  //   }, dispatch)
+  // }
+}
 
+//export default connect(mapStateToProps, mapDispatchToProps)(App)
+export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)
