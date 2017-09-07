@@ -6,6 +6,6 @@ const CatList = (props) => {
        </div>
      );
 
-}
+};
 
 export default CatList
