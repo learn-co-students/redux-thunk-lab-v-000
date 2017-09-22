@@ -24,7 +24,7 @@ describe('async actions', () => {
     ]
     const store = mockStore({})
     return store.dispatch(actions.fetchCats())
-      .then(() => { // return of async actions
+    .then(() => { // return of async actions
         expect(store.getActions()).toEqual(expectedActions)
       })
   })
