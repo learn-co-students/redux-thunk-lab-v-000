@@ -5,11 +5,10 @@ import {Navbar} from 'react-bootstrap'
 import CatList from './CatList'
 import { fetchCats } from './actions/catActions'
 
-class App extends Component {
+export class App extends Component {
 
   componentDidMount() {
-    debugger
-    // this.props.fetchCats()
+    this.props.fetchCats()
   }
 
   render() {
