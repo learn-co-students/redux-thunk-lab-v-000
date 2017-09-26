@@ -8,7 +8,7 @@ import { fetchCats } from './actions/catActions'
 export class App extends Component {
 
   componentDidMount() {
-    this.props.fetchCats()
+    // this.props.fetchCats()
   }
 
   render() {
