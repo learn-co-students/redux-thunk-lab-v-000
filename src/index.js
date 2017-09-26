@@ -12,5 +12,5 @@ const store = createStore(rootReducer, applyMiddleware(thunk));
 ReactDOM.render(
   <Provider store={store} >
     <WrapperApp />
-  </Provider>, document.getElementById('container')
+  </Provider>, document.getElementById('root')
 )

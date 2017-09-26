@@ -4,7 +4,6 @@ const catsReducer = (state = {
 }, action) => {
   switch (action.type) {
     case 'FETCH_CATS':
-    console.log(action)
       return { loading: false, pictures: action.payload };
     default:
       return state;

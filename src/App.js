@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {Navbar} from 'react-bootstrap'
-import { bindActionCreators } from 'redux';
 
 import CatList from './CatList'
 import { fetchCats } from './actions/catActions'
@@ -9,7 +8,8 @@ import { fetchCats } from './actions/catActions'
 class App extends Component {
 
   componentDidMount() {
-    this.props.fetchCats()
+    debugger
+    // this.props.fetchCats()
   }
 
   render() {
