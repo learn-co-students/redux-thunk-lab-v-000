@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux';
+import thunk from 'redux-thunk';
 import {fetchCats} from './actions/catActions'
 import CatList from './CatList'
 
@@ -48,4 +49,6 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch);
 };
 
+// export default App;
+// export const ConnectedApp = connect(mapStateToProps, {fetchCats}, mapDispatchToProps)(App);
 export default connect(mapStateToProps, mapDispatchToProps)(App);

@@ -8,9 +8,7 @@ import rootReducer from './reducers/index'
 
 function configureStore(){
   return createStore(
-    rootReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-    applyMiddleware(thunk)
+    rootReducer, applyMiddleware(thunk)
   );
 }
 
@@ -18,7 +16,7 @@ const store = configureStore()
 
 ReactDOM.render(
   <Provider store={store}>
-    <App store={store}/>
+    <App />
   </Provider>,
     document.getElementById('root')
 );
