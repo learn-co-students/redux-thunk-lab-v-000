@@ -1,8 +1,9 @@
-export default function catsReducer(state = [], action) {
+export default function catsReducer(state = { loading: false, pictures: [] }, action) {
     switch (action.type) {
    
       case 'FETCH_CATS':
-        return action.payload
+        let cats = Object.assign({}, {"loading": false}, {"pictures": action.payload })
+        return cats
    
       default:
         return state;

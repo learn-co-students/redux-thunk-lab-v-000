@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CatList = (props) => {
+const CatList = function(props) {
     let catPics = this.props.catpics.map((pic) => 
             <img>{pic}</img>
         )
