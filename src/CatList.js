@@ -1,10 +1,12 @@
 import React from 'react';
 
 const CatList = function(props) {
-    let catPics = this.props.catpics.map((pic) => 
-            <img>{pic}</img>
+    console.log(props.catPics)
+    debugger
+    let catPics = props.catPics.map((pic, index) => 
+            <img key={index} >{pic}</img>
         )
-    return <div> cat 1 </div>;
+    return <div>{ catPics }</div>;
 };
 
 export default CatList;

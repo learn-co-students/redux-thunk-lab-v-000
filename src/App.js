@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { fetchCats } from './actions/catActions';
 
-export class App extends Component {  
+export default class App extends Component {  
   constructor() {
     super()
       this.state = {
@@ -17,6 +17,7 @@ export class App extends Component {
     this.setState({ 
       cats: this.props.fetchCats()
     });
+    debugger
   }
   
   render() {
@@ -30,7 +31,7 @@ export class App extends Component {
           </Navbar.Header>
         </Navbar>
         
-        <CatList catpics={ this.props.cats }/>
+        <CatList catPics={ this.props.cats }/>
       </div>
     );
   }
