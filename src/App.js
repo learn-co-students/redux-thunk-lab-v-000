@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux'
-import {bindActionCreators} from 'redux';
-import {fetchCats} from './actions/catActions'
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import fetchCats from './actions/catActions'
 import CatList from './CatList'
 
 class App extends Component {
-  constructor(props){
-    super(props)
-
-    this.setState = ({
-      loading: false,
-      pictures: []
-    })
-  }
+  // constructor(props){
+  //   super(props)
+  //
+  //   this.setState = ({
+  //     loading: false,
+  //     pictures: []
+  //   })
+  // }
 
   componentDidMount() {
      this.props.fetchCats();
@@ -37,9 +37,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {
-    catPics: state.pictures
-  }
+  return {catPics: state.pictures}
 }
 
 const mapDispatchToProps = (dispatch) => {
