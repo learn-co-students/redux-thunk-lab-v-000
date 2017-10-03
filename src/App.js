@@ -25,7 +25,7 @@ class App extends Component {
             <Navbar.Brand>
               <a href="#">CatBook</a>
               <div>
-                <CatList catPics={this.state.catPics}/>
+                <CatList catPics={this.state.pictures}/>
               </div>
             </Navbar.Brand>
           </Navbar.Header>
@@ -37,7 +37,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    catPics: state.catPics
+    catPics: state.pictures
   }
 }
 
