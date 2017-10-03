@@ -3,21 +3,12 @@ import { Navbar } from 'react-bootstrap';
 import CatList from './CatList';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
-import { fetchCats } from './actions/catActions';
+import * as actions from './actions/catActions';
 
-export default class App extends Component {  
-  constructor() {
-    super()
-      this.state = {
-        cats: []
-      }
-  }
-  
+export class App extends Component {  
+ 
   componentDidMount() {
-    this.setState({ 
-      cats: this.props.fetchCats()
-    });
-    debugger
+    this.props.fetchCats()
   }
   
   render() {
@@ -31,18 +22,20 @@ export default class App extends Component {
           </Navbar.Header>
         </Navbar>
         
-        <CatList catPics={ this.props.cats }/>
+        <CatList catPics={this.props.catPics}/>
       </div>
     );
   }
 }
 
 const mapDispatchToProps = function(dispatch) {
-  bindActionCreators({fetchCats: fetchCats}, dispatch)
+  debugger
+  return { actions: bindActionCreators( actions, dispatch)
+  } 
 }
 
 const mapStateToProps = function(state) {
-  return { cats: state.cats }
+  return { catPics: state.cats.pictures }
 }
 
 export const WrapperApp =  connect(mapStateToProps, mapDispatchToProps)(App)
