@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux';
 import {fetchCats} from './actions/catActions'
 import CatList from './CatList'
 
@@ -25,7 +26,7 @@ class App extends Component {
             <Navbar.Brand>
               <a href="#">CatBook</a>
               <div>
-                <CatList catPics={this.state.pictures}/>
+                <CatList catPics={this.props.catPics}/>
               </div>
             </Navbar.Brand>
           </Navbar.Header>
@@ -41,6 +42,10 @@ const mapStateToProps = (state) => {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators ({
+    fetchCats: fetchCats
+  }, dispatch);
+};
 
-
-export default connect(mapStateToProps, {fetchCats})(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
