@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { Navbar } from 'react-bootstrap';
 import CatList from './CatList';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux'
+import { bindActionCreators } from 'redux';
 import * as actions from './actions/catActions';
 
 export class App extends Component {  
  
   componentDidMount() {
-    this.props.fetchCats()
+    if (this.props.catPics.length === 0) {
+      this.props.actions.fetchCats()
+    }
   }
   
   render() {
@@ -28,9 +30,9 @@ export class App extends Component {
   }
 }
 
-const mapDispatchToProps = function(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   debugger
-  return { actions: bindActionCreators( actions, dispatch)
+  return { actions: bindActionCreators( actions, dispatch )
   } 
 }
 
