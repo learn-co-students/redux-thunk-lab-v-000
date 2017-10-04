@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import fetchCats from './actions/catActions'
 import CatList from './CatList'
 import {Navbar} from 'react-bootstrap'
 
-export class App extends React.Component {
+export class App extends Component {
   constructor(props){
     super(props)
 
@@ -22,17 +22,17 @@ export class App extends React.Component {
   render() {
     return (
       <Navbar>
-      <Navbar.Header>
-      <Navbar.Brand>
-      <div className="App">
-        <a href="#">CatBook</a>
-        <div>
-          <CatList catPics={this.props.catPics}/>
-        </div>
-      </div>
-      </Navbar.Brand>
-           </Navbar.Header>
-         </Navbar>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <div className="App">
+              <a href="#">CatBook</a>
+              <div>
+              <CatList catPics={this.props.catPics}/>
+            </div>
+          </div>
+        </Navbar.Brand>
+      </Navbar.Header>
+    </Navbar>
     );
   }
 }
