@@ -31,7 +31,6 @@ export class App extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  debugger
   return { actions: bindActionCreators( actions, dispatch )
   } 
 }
