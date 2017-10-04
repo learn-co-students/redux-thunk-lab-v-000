@@ -23,6 +23,8 @@ function setup() {
   const mockStore = configureStore([]);
   const initialState = {cats: {loading: false, cats: []}}
   const store = mockStore(initialState);
+  //my test commented out below
+  // const wrapper = shallow(<App store={store}/>)
   const wrapper = shallow(<WrapperApp store={store}/>)
   return {
     wrapper
