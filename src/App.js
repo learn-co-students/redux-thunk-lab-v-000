@@ -6,7 +6,7 @@ import CatList from './CatList'
 import {Navbar} from 'react-bootstrap'
 
 export class App extends Component {
-  constructor(props){
+    constructor(props){
     super(props)
 
     this.setState = ({
@@ -47,9 +47,6 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch);
 };
 
-// export default App;
-// export const ConnectedApp = connect(mapStateToProps, {fetchCats}, mapDispatchToProps)(App);
-// export const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
-// export const ConnectedApp = connect()(App);
-// export default connect()(App);
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+App.displayName = 'Connect(App)'
