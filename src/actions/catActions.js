@@ -13,3 +13,5 @@ export function fetchCats() {
       })
   }
 }
+// Just for the test, add 'return' before fetch() to make it then-able
+// so the test can call then(). The test was written stupidly.
