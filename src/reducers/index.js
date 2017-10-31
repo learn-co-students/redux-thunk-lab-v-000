@@ -2,5 +2,5 @@ import { combineReducers } from 'redux';
 import catsReducer from './cats_reducer';
 
 export default function rootReducer() {
-  return catsReducer
+  return combineReducers({catsReducer});
 }
