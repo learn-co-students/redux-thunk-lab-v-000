@@ -36,7 +36,7 @@ const mapDispatchToProps = dispatch => {
 }
 
 function mapStateToProps(state){
-  return {catPics: state.cats.cats}
+  return {catPics: state.catsReducer.cats.cats}
 }
 
 // export default connect(mapStateToProps)(App)
