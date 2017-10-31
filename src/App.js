@@ -29,10 +29,8 @@ export class App extends Component {
 }
 
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchCats: bindActionCreators(fetchCats, dispatch)
-  }
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({fetchCats}, dispatch)
 }
 
 function mapStateToProps(state){
