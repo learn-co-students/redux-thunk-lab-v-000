@@ -36,8 +36,11 @@ const mapDispatchToProps = dispatch => {
 }
 
 function mapStateToProps(state){
-  return {catPics: state.catsReducer.cats.cats}
+  return {catPics: state.cats.cats}
 }
 
-// export default connect(mapStateToProps)(App)
+// export default connect(mapStateToProps)(App) <-- this is what you'd use if you don't need code to be testable
+
+// use below code just for testing purposes so you can test the App
+// without it being connected via mapDispatchToProps and mapStateToProps
 export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)

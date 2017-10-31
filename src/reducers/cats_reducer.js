@@ -1,14 +1,12 @@
-export default function catsReducer(state = {cats: {loading: false, cats: []}}, action = {}) {
+export default function catsReducer(state = {loading: false, cats: []}, action = {}) {
   switch (action.type) {
 
     case "FETCH_CATS": {
       if (action.pictures) {
         return {
-          cats: {
             loading: false,
-            cats: [...state.cats.cats, ...action.pictures]
+            cats: [...state.cats, ...action.pictures]
           }
-        }
       } else {
         return state
       }
@@ -16,10 +14,8 @@ export default function catsReducer(state = {cats: {loading: false, cats: []}}, 
 
     case "LOADING_CATS": {
       return {
-        cats: {
           loading: true,
           cats: []
-        }
       }
     }
 

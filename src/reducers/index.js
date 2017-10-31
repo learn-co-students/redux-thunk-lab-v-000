@@ -3,14 +3,16 @@ import catsReducer from './cats_reducer';
 
 //export default catsReducer
 export default combineReducers({
-  catsReducer
+  cats: catsReducer
 })
 
-// with combined reducers, the state is now a nested hash, like so:
+// combinedReducers changes state to a nested hash
+// nested under the name of the reducer as the key, like so:
 // {
 //   CatsReducer: {
 //     cats: {
-//       cats: [...]
+//       cats: [...],
+//       meow: [...]
 //     }
 //   }
 // }
