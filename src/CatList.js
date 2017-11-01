@@ -1,12 +1,10 @@
 import React from 'react';
 
 
-const CatList = ({ cats }) => {
-  debugger
-  const renderCats = cats.map(cat =>
-    <div key={cat.id}><a href={cat.source_url}><img src={cat.url} alt="" ></img></a></div>
+const CatList = ({ catPics }) => {
+  const renderCats = catPics.map(cat =>
+    <img src={cat.url} alt="" className="thumbnail responsive" style={{height: '220px', width: '221px', margin: 'auto'}}/>
   );
-  console.log(cats)
 
   return (
     <div>

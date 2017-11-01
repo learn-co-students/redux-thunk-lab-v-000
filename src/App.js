@@ -4,13 +4,17 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchCats } from './actions/catActions'
 import CatList from './CatList';
+import * as actions from './actions/catActions.js'
 
 
 
 export class App extends Component {
 
   componentDidMount() {
-    this.props.fetchCats()
+    if (this.props.catPics.length === 0) {
+      console.log('in component did mount')
+      this.props.actions.fetchCats()
+    }
   }
 
   render() {
@@ -19,18 +23,22 @@ export class App extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <CatList cats={this.props.catPics} />
+              <a href="#">CatBook</a>
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
+        <CatList catPics={this.props.catPics} />
       </div>
     );
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({fetchCats: fetchCats}, dispatch)
-};
+// const mapDispatchToProps = (dispatch) => {
+//   return bindActionCreators({fetchCats: fetchCats}, dispatch)
+// };
+function mapDispatchToProps(dispatch) {
+  return {actions: bindActionCreators(actions, dispatch)}
+}
 
 
 const mapStateToProps = (state) => {
