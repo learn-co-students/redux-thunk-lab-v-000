@@ -5,10 +5,8 @@ import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from './actions/catActions';
 
-class App extends Component {
-
+export class App extends Component {
   componentDidMount() {
-    // debugger;
     this.props.actions.fetchCats();
   }
 
@@ -36,4 +34,4 @@ function mapDispatchToProps(dispatch) {
   return {actions: bindActionCreators(actions, dispatch)}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App);
