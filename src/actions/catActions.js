@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-
+// made a comment
 export function fetchCats(){
   return dispatch => {
     dispatch({type: "LOADING_CATS"});
