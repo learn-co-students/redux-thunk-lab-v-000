@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
-import {Navbar} from 'react-bootstrap';
+import { Navbar} from 'react-bootstrap';
+import { connect } from 'react-redux';
+import CatList from './CatList.js';
+import { fetchCats } from './actions/catActions';
+import { bindActionCreators } from 'redux'
 
-import { CatList } from './CatList.js';
 
-class App extends Component {   
+export class App extends React.Component {   
+
+  componentDidMount() {
+    this.props.fetchCats();
+  }
   
   render() {
+  
     return (
-      <div className="App">
+
+      <div>
 
         <Navbar>
           <Navbar.Header>
@@ -16,33 +25,35 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
-        <CatList />
+        <CatList catPics={this.props.catPics} />
+        
       </div>
     );
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    catPics: state.cats.pictures
+  };
+}
 
-// // const mapStateToProps = (state, ownProps) => {
-// //   return {
-// //     cats: state.pets
-// //   };
-// // }
-
-
-
-
-
-// const mapStateToProps = (state, ownProps) => {
-//   const pet = state.pets.find(pet => pet.id == ownProps.match.params.petId)
-
-//   if (pet) {
-//     return { pet }
-//   } else {
-//     return {pet: {} }
-//   }
-// }
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchCats: fetchCats
+  }, dispatch);
+}
 
 
-export default App; //connect(mapStateToProps)(App);
+// const mapDispatchToProps = (dispatch) => {
+//   return bindActionCreators({
+//     fetchPerfume: fetchPerfume,
+//     addPerfume: addPerfume,
+//     deletePerfume: deletePerfume,
+//     getRecommendation: getRecommendation    
+//   }, dispatch);
+// };
+
+
+export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App);
 
