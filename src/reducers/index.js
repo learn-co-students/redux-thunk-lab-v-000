@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
-import catsReducer from './cats_reducer.js';
+import catsReducer from './cats_reducer';
 
-export const rootReducer = combineReducers({
+
+const rootReducer =  combineReducers({
   cats: catsReducer
 });
+
+
+export default rootReducer;
