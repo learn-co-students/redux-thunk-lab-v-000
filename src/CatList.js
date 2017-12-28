@@ -1,12 +1,22 @@
-import React from 'react';
+import React from 'react'
 
-const CatList = ({ catPics }) => {
-	// debugger
-	return (
-		<div>
-			<p>I am a cat</p>
-		</div>
-	)
+const CatList = (props) => {
+  function listCats() {
+    return props.catPics.map(catPic => {
+      return (
+        <div>
+          <div>
+            <img src={catPic.url} />
+          </div>
+        </div>
+      )
+    })
+  }
+  return (
+    <div>
+      {listCats()}
+    </div>
+  )
 }
 
-export default CatList;
+export default CatList
