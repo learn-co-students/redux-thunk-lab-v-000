@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import {fetchCats} from './actions/catActions.js'
-import {CatList} from './CatList.js'
+import CatList from './CatList.js'
 
 
 export class App extends Component {   
@@ -10,7 +10,7 @@ export class App extends Component {
   componentDidMount(){
      if (this.props.catPics.length === 0) {
       // console.log('in component did mount')
-      this.props.actions.fetchCats()
+      this.props.fetchCats()
     }
   }
   

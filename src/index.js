@@ -6,6 +6,7 @@ import thunk from 'redux-thunk'
 import rootReducer from './reducers/index.js'
 import {WrapperApp} from './App.js'
 
+
 const store = createStore(
   rootReducer,
   compose(
