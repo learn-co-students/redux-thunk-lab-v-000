@@ -6,7 +6,7 @@ export default function catsReducer(state =
     }
 
     case 'LOADING_CATS': {
-      debugger
+      return Object.assign({}, state, { loading: true })
     }
 
     default: {
