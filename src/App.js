@@ -5,7 +5,7 @@ import { CatList } from './CatList'
 import { bindActionCreators } from 'redux';
 import { fetchCats } from './actions/catActions'
 
-class App extends React.Component {
+export class App extends React.Component {
 
   componentDidMount(){
     this.props.fetchCats()
@@ -13,7 +13,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-      <p>IS THIS ON</p>
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
@@ -35,5 +34,6 @@ function mapDispatchToProps(dispatch){
   return bindActionCreators({fetchCats: fetchCats}, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App)
+
 
