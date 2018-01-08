@@ -20,20 +20,20 @@ export class App extends React.Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
-        <CatList catPics={this.props.cats} />
+        <CatList catPics={this.props.catPics} />
       </div>
     );
   }
 }
 
 function mapStateToProps(state){
-  return {cats: state}
+  return {catPics: state}
 }
 
 function mapDispatchToProps(dispatch){
   return bindActionCreators({fetchCats: fetchCats}, dispatch)
 }
 
-export const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App)
+export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import { ConnectedApp } from './App'
+import { WrapperApp } from './App'
 // import { store } from './store'
 import { Provider } from 'react-redux'
 import { applyMiddleware } from "redux";
@@ -25,7 +25,7 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-        <ConnectedApp />
+        <WrapperApp catPics={[]} />
     </Provider>,
     document.getElementById('root')
 );

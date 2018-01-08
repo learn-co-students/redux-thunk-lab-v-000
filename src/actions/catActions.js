@@ -1,3 +1,5 @@
+import fetch from "isomorphic-fetch";
+
 export function fetchCats(){
   return (dispatch) => {
     fetch("http://localhost:4000/images")
