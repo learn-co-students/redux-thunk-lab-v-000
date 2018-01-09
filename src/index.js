@@ -5,7 +5,7 @@ import { WrapperApp } from './App'
 import { Provider } from 'react-redux'
 import { applyMiddleware } from "redux";
 import { createStore } from "redux";
-// import rootReducer from './reducers/index';
+import rootReducer from './reducers/index';
 import { catsReducer } from "./reducers/cats_reducer";
 import thunk from "redux-thunk";
 
@@ -18,7 +18,7 @@ import thunk from "redux-thunk";
 // }
 
 const store = createStore(
-    catsReducer,
+    rootReducer,
     applyMiddleware(thunk)
 )
 
