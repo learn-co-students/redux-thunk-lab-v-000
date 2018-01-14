@@ -28,7 +28,7 @@ export class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {catPics: state.pictures};
+  return {catPics: state.cats.pictures};
 }
 
 const mapDispatchToProps = (dispatch) => {
