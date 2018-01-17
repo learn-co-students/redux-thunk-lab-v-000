@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap'
 import CatList from './CatList'
 import {connect} from 'react-redux'
-import { fetchCats } from './actions/catActions.js'
+import * as actions from './actions/catActions.js'
 
 class App extends Component {
   componentDidMount() {
     if (this.props.catPics.length === 0) {
       console.log('COMPONENTDIDMOUNT()')
-      this.props.fetchCats()
+      this.props.actions.fetchCats()
     }
   }
   render() {
@@ -33,4 +33,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { fetchCats })(App)
+export default connect(mapStateToProps, { actions })(App)
