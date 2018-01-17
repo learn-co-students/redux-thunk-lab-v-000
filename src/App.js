@@ -4,7 +4,7 @@ import CatList from './CatList'
 import {connect} from 'react-redux'
 import * as actions from './actions/catActions.js'
 
-class App extends Component {
+export class App extends Component {
   componentDidMount() {
     if (this.props.catPics.length === 0) {
       console.log('COMPONENTDIDMOUNT()')
@@ -28,9 +28,8 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  return {
-    catPics: state.cats.pictures
-  };
+  return {catPics: state.cats.pictures}
 }
 
-export default connect(mapStateToProps, { actions })(App)
+
+export const WrapperApp = connect(mapStateToProps, {actions})(App)
