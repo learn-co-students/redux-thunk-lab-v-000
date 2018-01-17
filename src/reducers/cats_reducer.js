@@ -1,7 +1,7 @@
 export default (state = {loading: false, pictures: []}, action) => {
     switch (action.type) {
         case 'LOADING_CATS':
-            return {...state, loading: true}
+            return Object.assign({}, state, {loading: true})
         //fetching cats from external API, 
         // what this reducer returns will become the 
         // state

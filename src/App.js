@@ -3,6 +3,7 @@ import {Navbar} from 'react-bootstrap'
 import CatList from './CatList'
 import {connect} from 'react-redux'
 import * as actions from './actions/catActions.js'
+import { bindActionCreators } from 'redux'
 
 export class App extends Component {
   componentDidMount() {
@@ -30,6 +31,9 @@ export class App extends Component {
 function mapStateToProps(state) {
   return {catPics: state.cats.pictures}
 }
+function mapDispatchToProps(dispatch) {
+  return {actions: bindActionCreators(actions, dispatch)}
+}
 
 
-export const WrapperApp = connect(mapStateToProps, {actions})(App)
+export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)
