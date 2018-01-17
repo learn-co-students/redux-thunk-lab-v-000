@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import * as actions from ' ./actions/catActions.js'
 import {Navbar} from 'react-bootstrap'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
+import CatList from './CatList'
+import {connect} from 'react-redux'
+import { fetchCats } from './actions/catActions.js'
 
-
-class App extends Component {   
-  
+class App extends Component {
   componentDidMount() {
-    if (this.props.catPics.length === 0){
-      this.props.actions.fetchCats();
+    if (this.props.catPics.length === 0) {
+      console.log('COMPONENTDIDMOUNT()')
+      this.props.fetchCats()
     }
   }
-
   render() {
     return (
       <div className="App">
@@ -23,20 +21,16 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
+        <CatList catPics={this.props.catPics} />
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
+function mapStateToProps(state) {
   return {
     catPics: state.cats.pictures
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {actions: bindActionCreators(actions, dispatch)}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
-
+export default connect(mapStateToProps, { fetchCats })(App)
