@@ -1,11 +1,11 @@
 import fetchCats from '../actions/catActions'
 
 function catsReducer(state={
-  cats:[]
+  pictures:[]
 }, action) {
   switch(action.type) {
     case 'FETCH_CATS':
-      return {loading: false, cats: action.payload}
+      return {loading: false, pictures: action.payload}
     case 'LOADING_CATS':
       return Object.assign({}, state, {loading: true})
     default:
