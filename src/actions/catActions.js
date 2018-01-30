@@ -1,14 +1,14 @@
-import thunk from 'redux-thunk'
+import fetch from 'isomorphic-fetch';
 
 export function fetchCats() {
-  return (dispatch) => {
-    dispatch({type: 'ADD_CATS_REQUEST'})
+  return function(dispatch){
+    dispatch({type: 'LOADING_CATS'})
     return fetch('http://localhost:4000/db')
-    .then(response =>response.json())
-    .then(responseJSON => {
-      return responseJSON.images.map(image => (
-        image.url
-      ))
+    .then(response => {
+      return response.json()
+    }).then(responseJson => {
+      dispatch({type: 'FETCH_CATS', payload: responseJson.images
     })
+  })
   }
 }

@@ -5,9 +5,10 @@ import CatList from './CatList'
 class App extends Component {
 
   render() {
+    
     return (
       <div className="App">
-      <CatList catPics = {catPics}/>
+      <CatList catPics={catPics}/>
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>

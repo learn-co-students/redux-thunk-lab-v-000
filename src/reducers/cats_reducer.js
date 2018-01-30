@@ -5,9 +5,11 @@ function catsReducer(state={
 }, action) {
   switch(action.type) {
     case 'FETCH_CATS':
-      return fetchCats()
+      return {loading: false, cats: action.payload}
+    case 'LOADING_CATS':
+      return Object.assign({}, state, {loading: true})
     default:
-      return cats
+      return state
   }
 }
 
