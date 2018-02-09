@@ -8,7 +8,7 @@ import CatList from './CatList';
 export class App extends Component {   
   
   componentDidMount() {
-    fetchCats();
+    this.props.actions.fetchCats();
   }
 
   render() {
