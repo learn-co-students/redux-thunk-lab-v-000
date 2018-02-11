@@ -1,15 +1,15 @@
 import fetch from 'isomorphic-fetch';
+export function fetchCats() {
 
-export const fetchCats = () => {
-  return (dispatch) => {
-    dispatch({type: 'START_ADDING_CATS_REQUEST'})
-    return fetch('http:localhost:4000/db')
-    .then(response => response.json())
-    .then(respJSON => {
-      dispatch({
-        type: 'FETCH_CATS',
-        cats: respJSON.images
-      })
+  return function(dispatch){
+    dispatch({type: 'LOADING_CATS'})
+    console.log("dispatching LOADING_CATS action")
+    return fetch('http://localhost:4000/db')
+      .then(res => {
+        return res.json()
+      }).then(responseJson => {
+        console.log("dispatching FETCH_CATS action")
+        dispatch({type: 'FETCH_CATS', payload: responseJson.images})
     })
   }
 }
