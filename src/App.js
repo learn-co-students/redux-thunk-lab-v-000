@@ -8,7 +8,6 @@ import CatList from './CatList';
 class App extends Component {
   componentDidMount() {
     this.props.fetchCats();
-    // debugger;
   }
 
   render() {
@@ -19,10 +18,10 @@ class App extends Component {
           <Navbar.Header>
             <Navbar.Brand>
               <a href="#">CatBook</a>
-              <CatList catPics={this.props.catPics} />
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
+        <CatList catPics={this.props.catPics} />
       </div>
     );
   }

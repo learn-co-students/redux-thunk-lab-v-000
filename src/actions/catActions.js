@@ -6,8 +6,9 @@
 // }
 import fetch from 'isomorphic-fetch';
 
+// my first attempt:
 // export const fetchCats = () => {
-//   fetch('http://localhost:4000/db').then(response => {
+//   return fetch('http://localhost:4000/db').then(response => {
 //     return response.json()
 //   }).then(responseJSON => {
 //     return responseJSON.images;
@@ -20,7 +21,7 @@ import fetch from 'isomorphic-fetch';
 //   })
 // }
 
-// import fetch from 'isomorphic-fetch';
+// soln inspired soln: s
 export const fetchCats = () => {
   return function(dispatch) {
     return fetch('http://localhost:4000/db').then(response => {
@@ -35,6 +36,7 @@ export const fetchCats = () => {
     })
   }
 }
+// soln peeked at:
 // import fetch from 'isomorphic-fetch';
 // export function fetchCats() {
 //

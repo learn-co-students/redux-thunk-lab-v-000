@@ -17,6 +17,7 @@ import rootReducer from '../src/reducers/index'
 
 const images = [{url: "www.example.com/cat1"}, {url: 'www.example.com/cat2'}]
 function setup() {
+  debugger;
   const props = {
     catPics: images
   }
