@@ -38,23 +38,23 @@ function setUpMount() {
   return {component}
 }
 ////////// SOPHIA SAID I COULD //////////////
-// describe('<App/>', function () {
+describe('<App/>', function () {
 
-//   it('should render the CatList component as a child', function () {
-//     const { wrapper } = setup()
-//     expect(wrapper.shallow().find('CatList').length).toEqual(1)
-//   });
+  it('should render the CatList component as a child', function () {
+    const { wrapper } = setup()
+    expect(wrapper.shallow().find('CatList').length).toEqual(1)
+  });
 
 
-//   it('should be connected to the store via the `connect` function', function() {
-//     const { wrapper } = setup()
-//     expect(wrapper.unrendered.type.displayName).toEqual('Connect(App)')
-//   })
+  it('should be connected to the store via the `connect` function', function() {
+    const { wrapper } = setup()
+    expect(wrapper.unrendered.type.displayName).toEqual('Connect(App)')
+  })
 
-//   it('should use the componentDidMount lifecycle method to fetchCats', function() {
-//     // sinon.spy(App.prototype, 'componentDidMount');
-//     sinon.stub(App.prototype, 'componentDidMount');
-//     const {component } = setUpMount()
-//     expect(App.prototype.componentDidMount.calledOnce).toEqual(true);
-//   })
-// });
+  it('should use the componentDidMount lifecycle method to fetchCats', function() {
+    // sinon.spy(App.prototype, 'componentDidMount');
+    sinon.stub(App.prototype, 'componentDidMount');
+    const {component } = setUpMount()
+    expect(App.prototype.componentDidMount.calledOnce).toEqual(true);
+  })
+});
