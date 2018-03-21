@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow, mount} from 'enzyme'
 import expect, { createSpy, spyOn, isSpy } from 'expect'
-import ReactTestUtils from 'react-addons-test-utils'
+import ReactTestUtils from 'react-dom/test-utils'
 import thunk from 'redux-thunk'
 import { WrapperApp, App } from '../src/App'
 import CatList from '../src/CatList'
@@ -37,7 +37,7 @@ function setUpMount() {
   const component = mount(<App catPics={[]}/>)
   return {component}
 }
-
+////////// SOPHIA SAID I COULD //////////////
 describe('<App/>', function () {
 
   it('should render the CatList component as a child', function () {
