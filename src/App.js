@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
-import {Navbar} from 'react-bootstrap'
+import { Navbar } from 'react-bootstrap'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as catActions from './actions/catActions'
+import CatList from './CatList'
 
-class App extends Component {   
-  
+export class App extends Component {
+  componentDidMount() {
+    console.log(this.props)
+    if (this.props.catPics.length === 0) {
+      this.props.catActions.fetchCats()
+    }
+  }
+
   render() {
     return (
       <div className="App">
@@ -13,12 +23,19 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
+        <CatList catPics={this.props.catPics} />
       </div>
     );
   }
 }
 
+function mapStateToProps(state) {
+  return {catPics: state.cats.pictures}
+}
 
+function mapDispatchToProps(dispatch) {
+  let boundActions = bindActionCreators(catActions, dispatch)
+  return {catActions: boundActions}
+}
 
-export default App
-
+export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)
