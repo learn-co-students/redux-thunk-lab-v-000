@@ -57,4 +57,4 @@ describe('<App/>', function () {
     const {component } = setUpMount()
     expect(App.prototype.componentDidMount.calledOnce).toEqual(true);
   })
-});
+}); 
