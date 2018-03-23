@@ -2,7 +2,7 @@ import React from 'react';
 
 const CatList = (props) => {
   const renderCats = props.catPics.map(pic => 
-    <img src={pic.url} role="presentation"/>
+    <img src={pic.url} alt="cat" width="200"/>
   )
 
   return (
