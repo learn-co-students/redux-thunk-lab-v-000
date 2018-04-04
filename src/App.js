@@ -5,7 +5,7 @@ import { fetchCats } from './actions/catActions';
 import { Navbar } from 'react-bootstrap';
 import CatList from './CatList'
 
-class App extends Component {   
+export class App extends Component {   
   componentDidMount() {
     this.props.fetchCats()
   }
@@ -20,7 +20,7 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
-        <CatList catPics={this.props.pictures} />
+        <CatList catPics={this.props.pictures || []} />
       </div>
     );
   }
@@ -35,4 +35,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App);
-export {App}
