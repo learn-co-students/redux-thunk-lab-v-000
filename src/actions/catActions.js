@@ -8,7 +8,7 @@ export const fetchCats = () => {
 			return response.json();
 		})
 		.then(catsJSON => {
-			dispatch({type: 'FETCH_CATS', payload: catsJSON.images})
+			return dispatch({type: 'FETCH_CATS', payload: catsJSON.images})
 		});
 	}
 
