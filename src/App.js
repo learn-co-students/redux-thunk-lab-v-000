@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap';
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import {CatList} from './CatList'
 
 class App extends Component {
 
