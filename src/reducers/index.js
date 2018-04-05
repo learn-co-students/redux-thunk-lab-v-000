@@ -1,15 +1,9 @@
-import React from 'react'
 import { combineReducers } from 'redux';
-import { catsReducer } from './cats_reducer'
+import catReducer from './cats_reducer';
 
 
 const rootReducer = combineReducers({
-  cats: catsReducer,
-  
+  cats: catReducer
 });
 
-
-
-
-
-// Define your rootReducer in reducers/index.js to use the combineReducers function with your catsReducer.
+export default rootReducer;
