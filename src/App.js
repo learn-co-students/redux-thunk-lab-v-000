@@ -9,6 +9,7 @@ export class App extends Component {
   componentDidMount() {
     this.props.fetchCats()
   }
+
   render() {
     return (
       <div className="App">
