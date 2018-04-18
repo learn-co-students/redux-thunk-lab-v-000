@@ -1,7 +1,7 @@
-const catsReducer = (state = [], action) => {
+const catsReducer = (state = { loading: false, pictures: [] }, action) => {
   switch (action.type) {
     case 'FETCH_CATS':
-      return action.cats
+      return {loading: false, pictures: action.payload}
     default:
       return state
   }
