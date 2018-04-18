@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import {Navbar} from 'react-bootstrap'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Navbar } from 'react-bootstrap'
 
-class App extends Component {   
-  
+class App extends Component {
+
   render() {
     return (
       <div className="App">
@@ -18,7 +19,9 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return { catPics: state.cats }
+}
 
-
-export default App
+export default connect(mapStateToProps)(App)
 
