@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 
 const CatList = (props) => {
-    debugger
-    const catsDiv = props.catPics.map(pic =>{
-        <img
-            src={pic.url}
-          />;
-            
+    const catsDiv = props.catPics.map(pic => {
+        return <img src={pic.url} />;
     })
     return (
         <div>

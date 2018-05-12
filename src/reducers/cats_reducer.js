@@ -1,8 +1,13 @@
-function catsReducer(state = [], action) {
+function catsReducer(state = { loading: false, pictures: [] }, action) {
   switch (action.type) {
  
     case 'FETCH_CATS':
-      return action.cats
+        // const cats = action.payload
+        // return Object.assign({}, state, {pictures: state.pictures.concat(cats)})
+        return Object.assign({}, state, {
+            loading: false,
+            pictures: action.payload
+          })
  
     default:
       return state;
