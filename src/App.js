@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap'
+import CatList from './CatList'
 
 class App extends Component {   
   
@@ -10,6 +11,7 @@ class App extends Component {
           <Navbar.Header>
             <Navbar.Brand>
               <a href="#">CatBook</a>
+              <CatList />
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
