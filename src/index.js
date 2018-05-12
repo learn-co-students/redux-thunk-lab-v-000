@@ -1,9 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import App from './App'
+import {combineReducers, createStore, applyMiddleware} from "redux";
+import WrapperApp from './App'
+import {Provider} from 'redux';
+import thunk from 'redux-thunk';
+import catsReducer from './reducers/cats_reducer';
 
+
+const rootReducer = combineReducers({
+    catsReducer
+});
+
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
-    <App />,
-    document.getElementById('root')
+    <Provider store={store} >
+        <WrapperApp />
+    </Provider>, document.getElementById('root')
 );
+
+ 
