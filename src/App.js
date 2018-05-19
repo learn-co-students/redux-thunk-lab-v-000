@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import CatList from './CatList'
 import * as actions from './actions/catActions.js'
 
-export class App extends Component {
+class App extends Component {
 
   componentDidMount() {
     this.props.actions.fetchCats()
@@ -27,13 +27,13 @@ export class App extends Component {
   }
 }
 
-function mapStateToProps (state){
+const mapStateToProps = (state) => {
   return {
     catPics: state.cats.pictures
   };
 }
 
-function mapDispatchToProps(dispatch){
+const mapDispatchToProps = (dispatch) => {
   return {actions: bindActionCreators(actions, dispatch)};
 };
 
