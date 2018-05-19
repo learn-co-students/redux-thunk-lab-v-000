@@ -5,7 +5,7 @@ const CatList = (props) => {
     <div>
       {props.catPics.map(catPic => {return (
           <div>
-            <img src={catPic.url}/>
+            <img src={catPic.url} role="presentation"/>
           </div>
         )
       })}
