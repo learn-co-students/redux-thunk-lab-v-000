@@ -34,7 +34,5 @@ function mapStateToProps(state){
   return {catPics: state.pictures}
 }
 
-connect(mapStateToProps, mapDispatchToProps)(App)
- 
-export default App;
+export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)
 

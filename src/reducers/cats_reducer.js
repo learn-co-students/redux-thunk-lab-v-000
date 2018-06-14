@@ -3,8 +3,6 @@ export default function catsReducer(state = { loading: false, pictures: [] }, ac
  
     case 'FETCH_CATS':
       return { loading: false, pictures: action.payload }
-      // return state;
-      // return {...state, pictures: action.payload}
  
     default:
       return state;
