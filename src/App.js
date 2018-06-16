@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from './actions/catActions.js'
 
-class App extends Component {
+export class App extends Component {
   componentDidMount() {
     if (this.props.catPics.length === 0) {
       console.log('in component did mount')
