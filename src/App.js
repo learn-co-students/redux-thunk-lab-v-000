@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
-import {Navbar} from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import CatList from './CatList';
+import fetchCats from './actions/catActions';
 
 class App extends Component {
+
+  compnentDidMount() {
+    this.props.fetchCats();
+  }
 
   render() {
     return (
@@ -20,6 +27,10 @@ class App extends Component {
   }
 }
 
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    fetchCats: fetchCats
+  }, dispatch)
+}
 
-
-export default App
+export default connect(mapDispatchToProps)(App)
