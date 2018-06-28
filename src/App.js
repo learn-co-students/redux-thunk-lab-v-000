@@ -40,4 +40,4 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch)
 }
 
-export const ConnectedApp = connect(mapStateToProps)(mapDispatchToProps)(App)
+export const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App)
