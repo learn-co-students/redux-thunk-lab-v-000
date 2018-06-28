@@ -5,10 +5,13 @@ import { bindActionCreators } from 'redux';
 import CatList from './CatList';
 import fetchCats from './actions/catActions';
 
-class App extends Component {
+export class App extends Component {
 
   compnentDidMount() {
-    const catPics = this.props.fetchCats();
+    // if (this.props.catPics === []){
+    //
+    // }
+    const catPics = this.props.actions. fetchCats();
     this.setState({ pictures: catPics })
   }
 
