@@ -1,6 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class CatList extends Component {
-
-
+const CatList = (props) => {
+  function catUrls() {
+    return props.catPics.map(catPic => {
+      return (
+        <div>
+          <img src={catPic.url} className="thumbnail responsive" style={{height: '220px', width: '221px', margin: 'auto'}}/>
+        </div>
+      )
+    })
+  }
+  return (
+    <div>
+      {catUrls()}
+    </div>
+  )
 }
+
+export default CatList

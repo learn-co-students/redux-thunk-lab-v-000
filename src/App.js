@@ -30,7 +30,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-  catPics: state.pictures
+  catPics: state.cat.pictures
   }
 }
 
