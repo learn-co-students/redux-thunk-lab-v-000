@@ -1,7 +1,7 @@
-export default function catsReducer(state = [], action) {
+export default function catsReducer(state = { loading: false, pictures: [] }, action) {
   switch (action.type) {
     case 'FETCH_CATS':
-      return action.cats;
+      return action.catPics;
     default:
       return state;
   }
