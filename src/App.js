@@ -8,11 +8,9 @@ import fetchCats from './actions/catActions';
 export class App extends Component {
 
   compnentDidMount() {
-    // if (this.props.catPics === []){
-    //
-    // }
-    const catPics = this.props.actions. fetchCats();
-    this.setState({ pictures: catPics })
+    if (this.props.catPics === []){
+      this.props.actions.fetchCats();
+    }
   }
 
   render() {
@@ -22,10 +20,10 @@ export class App extends Component {
           <Navbar.Header>
             <Navbar.Brand>
               <a href="#">CatBook</a>
-              <CatList catPics={this.props.catPics} />
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
+        <CatList catPics={this.props.catPics} />
       </div>
     );
   }
