@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Navbar } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import CatList from './CatList';
 import fetchCats from './actions/catActions';
 
-export class App extends Component {
+export class App extends React.Component {
 
   compnentDidMount() {
-    if (this.props.catPics === []){
-      this.props.actions.fetchCats();
-    }
+    // if (this.props.catPics === []){
+      this.props.fetchCats();
+    // }
   }
 
   render() {
@@ -31,7 +31,7 @@ export class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-  catPics: state.cat.pictures
+  catPics: state.pictures
   }
 }
 
@@ -41,4 +41,4 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch)
 }
 
-export const ConnectedApp = connect(mapStateToProps, mapDispatchToProps)(App)
+export const WrapperApp = connect(mapStateToProps, mapDispatchToProps)(App)

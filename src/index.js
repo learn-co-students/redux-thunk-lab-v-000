@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom'
 import {Provider} from 'redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import App from './App';
+import WrapperApp from './App';
 import rootReducer from './reducers/index';
 
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
     <Provider store={store}>
-      <App />
+      <WrapperApp />
     </Provider>,
     document.getElementById('root')
 );
