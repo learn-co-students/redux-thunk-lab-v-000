@@ -8,9 +8,9 @@ import fetchCats from './actions/catActions';
 export class App extends React.Component {
 
   compnentDidMount() {
-    // if (this.props.catPics === []){
-      this.props.fetchCats();
-    // }
+    if (this.props.catPics.length === 0){
+      this.props.fetchCats()
+    }
   }
 
   render() {
@@ -31,7 +31,7 @@ export class App extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-  catPics: state.pictures
+  catPics: state.cats.pictures
   }
 }
 
