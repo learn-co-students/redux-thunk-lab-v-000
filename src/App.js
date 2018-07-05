@@ -19,7 +19,7 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
-        <CatList />
+        <CatList catPics={this.props.catPics}/>
       </div>
     );
   }
@@ -27,7 +27,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    cats: state.cats
+    catPics: state.pictures
   };
 }
 export const WrapperApp = connect(mapStateToProps, { fetchCats })(App);
