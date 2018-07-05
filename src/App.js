@@ -16,10 +16,10 @@ class App extends Component {
           <Navbar.Header>
             <Navbar.Brand>
               <a href="#">CatBook</a>
-              <CatList />
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
+        <CatList />
       </div>
     );
   }
