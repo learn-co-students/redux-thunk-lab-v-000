@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 
 export default class CatList extends React.Component {
-  const listCats = this.props.cats.map(cat =>
+  const listCats = this.props.cats.map(cat => {
     <img src={cat} alt="cat Image">
-  );
+  });
 
   render () {
     return (
