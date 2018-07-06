@@ -26,7 +26,8 @@ Define your `catsReducer` in `src/reducers/cats_reducer`. Your `catsReducer` sho
 Define your action creator function, `fetchCats` in `src/actions/catActions`. This action should use `fetch` to make the web request for your cat pic JSON. It should use a `then` function to parse the JSON of the response to this request, and another `.then` function chained on that to grab the actual collection of cat pic image objects. Something like:
 
 ```js
-fetch('http://localhost:4000/db').then(response => {
+fetch('http://localhost:4000/db')
+.then(response => {
   return response.json()
 }).then(responseJSON => {
   return responseJSON.images
