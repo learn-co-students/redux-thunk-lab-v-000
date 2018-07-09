@@ -1,8 +1,10 @@
+import fetch from 'isomorphic-fetch';
+
 export function fetchCats() {
   return (dispatch) => {
     dispatch({ type: 'LOADING_CATS' });
-    const cats = fetch('http://localhost:4000/db')
+    return fetch('http://localhost:4000/db')
       .then(response => response.json())
-      .then(cats => dispatch({ type: 'FETCH_CATS', cats }));
+      .then(cats => dispatch({ type: 'FETCH_CATS', payload: cats.images }));
   };
 }
