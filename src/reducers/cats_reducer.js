@@ -1,7 +1,9 @@
-export default function catsReducer(state = [], { type, payload }){
+export default function catsReducer(state = { loading: false, pictures: [] }, { type, payload }){
   switch (type) {
     case "FETCH_CATS":
-      return { payload }
+      return { loading: false, pictures: payload }
+    case "LOADING_CATS":
+      return { state }
     default:
       return state
   }
