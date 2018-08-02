@@ -4,14 +4,10 @@ import { connect } from 'react-redux';
 import { fetchCats } from './actions/catActions';
 import CatList from './CatList';
 
-class App extends Component {
-
-  constructor() {
-    super();
-    this.state = {catPics: []};
-  }
+export class App extends Component {
 
   componentDidMount() {
+    this.props.fetchCats();
   }
 
   render() {
@@ -24,7 +20,7 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
-        <CatList catPics={this.state.catPics}/>
+        <CatList catPics={this.props.catPics}/>
       </div>
     );
   }
