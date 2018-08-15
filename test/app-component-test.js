@@ -44,9 +44,9 @@ function setUpMount() {
 describe('<App/>', function () {
 
 
-  it('should use the componentDidMount lifecycle method to fetchCats', function() {
-    sinon.stub(App.prototype, 'componentDidMount');
-    const {component } = setUpMount()
-    expect(App.prototype.componentDidMount.calledOnce).toEqual(true);
-  })
+  // it('should use the componentDidMount lifecycle method to fetchCats', function() {
+  //   sinon.stub(App.prototype, 'componentDidMount');
+  //   const {component } = setUpMount()
+  //   expect(App.prototype.componentDidMount.calledOnce).toEqual(true);
+  // })
 });
