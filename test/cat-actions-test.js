@@ -21,8 +21,11 @@ describe('async actions', () => {
       .reply(200, { images: [{url: "www.example.com/cat1"}, {url: 'www.example.com/cat2'}] })
     
     const expectedActions = [
-      {type: 'LOADING_CATS'},
-      { type: "FETCH_CATS", payload: [{url: "www.example.com/cat1"}, {url: 'www.example.com/cat2'}] }
+      { type: 'LOADING_CATS' },
+      { 
+        type: "FETCH_CATS", 
+        payload: [{url: "www.example.com/cat1"}, {url: 'www.example.com/cat2'}] 
+      }
     ]
 
     const store = mockStore({})
