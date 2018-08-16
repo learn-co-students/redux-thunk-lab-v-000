@@ -3,7 +3,7 @@ export default function fetchCats(
 ) {
   switch (action.type) {
     case 'LOADING_CATS':
-      return state
+      return {...state, loading: true}
     case 'FETCH_CATS':
       return {
         loading: false,
