@@ -7,16 +7,16 @@ import Adapter from 'enzyme-adapter-react-16';
 configure({ adapter: new Adapter() })
 
 
-describe('<CatList/>', function () {
+// describe('<CatList/>', function () {
 
-  const catPics = [{url: "www.example.com/cat1"}, {url: 'www.example.com/cat2'}]
-  it('should display the cat pics wrapped in <img> tags', function () {
-    const wrapper = shallow(<CatList catPics={catPics}/>);
-    expect(wrapper.find('img').length).toEqual(2);
-  });
+//   const catPics = [{url: "www.example.com/cat1"}, {url: 'www.example.com/cat2'}]
+//   it('should display the cat pics wrapped in <img> tags', function () {
+//     const wrapper = shallow(<CatList catPics={catPics}/>);
+//     expect(wrapper.find('img').length).toEqual(2);
+//   });
 
-  it('should have props catPics', function () {
-    const wrapper = shallow(<CatList catPics={catPics}/>);
-    expect(wrapper.props().catPics).toBe.defined;
-  });
-});
+//   it('should have props catPics', function () {
+//     const wrapper = shallow(<CatList catPics={catPics}/>);
+//     expect(wrapper.props().catPics).toBe.defined;
+//   });
+// });
