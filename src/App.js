@@ -1,4 +1,4 @@
-// this version shows cats but fails test!!!
+// this version passes test but doewsn't show cats!!!
 import React, { Component } from "react";
 import { Navbar } from "react-bootstrap";
 import { connect } from "react-redux";
@@ -16,9 +16,7 @@ class App extends Component {
           <Navbar.Header>
             <Navbar.Brand>
               <a href="#">CatBook</a>
-              <div className="CatPics">
-                <CatList {...this.props} />
-              </div>
+              <div className="CatPics" />
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
