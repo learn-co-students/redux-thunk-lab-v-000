@@ -8,7 +8,6 @@ class App extends Component {
   componentDidMount() {
     this.props.fetchCats().then(console.log("consoleDidMount!!"));
   }
-  catPics = [];
   render() {
     return (
       <div className="App">
@@ -16,6 +15,9 @@ class App extends Component {
           <Navbar.Header>
             <Navbar.Brand>
               <a href="#">CatBook</a>
+              <div className="CatPics">
+                <CatList {...this.props} />
+              </div>
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
