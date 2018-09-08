@@ -3,10 +3,9 @@ class CatList extends Component {
   render() {
     return (
       <div>
-        CatList
-        {this.props.catPics.map((image, idx) => (
-          <div key={idx}>
-            <img src={image.url} alt="catPic" />
+        {this.props.catPics.map((image, index) => (
+          <div key={index}>
+            <img src={image.url} alt="catPic" width="100" height="100" />
           </div>
         ))}
       </div>

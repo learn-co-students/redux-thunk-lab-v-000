@@ -1,3 +1,4 @@
+// this version shows cats but fails test!!!
 import React, { Component } from "react";
 import { Navbar } from "react-bootstrap";
 import { connect } from "react-redux";
@@ -6,7 +7,7 @@ import CatList from "./CatList";
 
 class App extends Component {
   componentDidMount() {
-    this.props.fetchCats().then(console.log("consoleDidMount!!"));
+    this.props.fetchCats();
   }
   render() {
     return (
