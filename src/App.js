@@ -1,8 +1,14 @@
-import React, { Component } from 'react';
-import {Navbar} from 'react-bootstrap'
+// this version passes test but doewsn't show cats!!!
+import React, { Component } from "react";
+import { Navbar } from "react-bootstrap";
+import { connect } from "react-redux";
+import { fetchCats } from "./actions/catActions";
+import CatList from "./CatList";
 
-class App extends Component {   
-  
+class App extends Component {
+  componentDidMount() {
+    this.props.fetchCats();
+  }
   render() {
     return (
       <div className="App">
@@ -10,6 +16,7 @@ class App extends Component {
           <Navbar.Header>
             <Navbar.Brand>
               <a href="#">CatBook</a>
+              <div className="CatPics" />
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
@@ -17,8 +24,22 @@ class App extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return {
+    catPics: state.pictures
+  };
+};
 
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchCats: () => dispatch(fetchCats())
+  };
+};
 
+export default connect(
+  mapStateToProps,
+  // null,
+  mapDispatchToProps
+)(App);
 
-export default App
-
+// export default App;
