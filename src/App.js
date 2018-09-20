@@ -8,11 +8,10 @@ class App extends Component {
   
   componentDidMount(){
     this.props.fetchCats();
-    console.log(cats)
   }
 
   render() {
- 
+    debugger
 
     return (
       <div className="App">
@@ -24,18 +23,18 @@ class App extends Component {
           </Navbar.Header>
         </Navbar>
      
-        <CatList catPics={cats}/>
+        {/* <CatList catPics={this.props.cats}/> */}
       </div>
     );
   }
 }
 
-function mapDispatchToProps(dispatch){
-  return {fetchCats: () => dispatch(fetchCats())}
+const mapDispatchToProps = dispatch => {
+  return { fetchCats: () => dispatch(fetchCats()) }
 }
 
-function mapStateToProps(state){
-  return {cats:state.cats};
+const mapStateToProps = state => {
+  return { cats: state.cats };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
