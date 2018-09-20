@@ -8,7 +8,7 @@ export function catsReducer(state=[], action) {
         return {...state};
 
         case "FETCH_CATS":
-        return action.payload;
+        return action.cats;
 
         default:
         return state;

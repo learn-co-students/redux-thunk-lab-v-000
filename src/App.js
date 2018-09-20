@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap'
-import  {fetchCats} from './actions/catActions';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import CatList from './CatList';
+import  { fetchCats } from './actions/catActions';
 
 class App extends Component {   
   
   componentDidMount(){
     this.props.fetchCats();
+   
   }
 
   render() {
