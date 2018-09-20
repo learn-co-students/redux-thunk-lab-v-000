@@ -3,6 +3,7 @@ import {Navbar} from 'react-bootstrap'
 import { connect } from 'react-redux';
 import CatList from './CatList';
 import  { fetchCats } from './actions/catActions';
+import { bindActionCreators } from 'redux'
 
 class App extends Component {   
   
@@ -12,7 +13,7 @@ class App extends Component {
   }
 
   render() {
-   
+   debugger
 
     return (
       <div className="App">
@@ -24,13 +25,13 @@ class App extends Component {
           </Navbar.Header>
         </Navbar>
      
-        {/* <CatList catPics={this.props.cats}/> */}
+         <CatList catPics={this.props.cats}/> 
       </div>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return { fetchCats: () => dispatch(fetchCats()) }
 }
 
