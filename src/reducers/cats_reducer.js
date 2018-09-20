@@ -5,7 +5,7 @@ export function catsReducer(state=[], action) {
     // const cats = fetchCats();
     switch(action.type) {
         case "LOADING_CATS":
-        return state;
+        return {...state};
 
         case "FETCH_CATS":
         return action.payload;
