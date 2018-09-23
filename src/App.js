@@ -13,7 +13,6 @@ class App extends Component {
   }
 
   render() {
-   debugger
 
     return (
       <div className="App">
@@ -25,7 +24,7 @@ class App extends Component {
           </Navbar.Header>
         </Navbar>
      
-         <CatList catPics={this.props.cats}/> 
+         {/* <CatList catPics={this.props.cats}/>  */}
       </div>
     );
   }
