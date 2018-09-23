@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import catsReducer from './cats_reducer'
+import catsReducer from './catsReducer'
 
 const rootReducer = combineReducers({
     cats: catsReducer
