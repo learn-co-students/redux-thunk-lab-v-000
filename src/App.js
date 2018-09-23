@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props.cats)
+
     return (
       <div className="App">
         <Navbar>
@@ -26,19 +26,22 @@ class App extends Component {
         {/* <div>
         <img src={this.props.cats[0].url} />
         </div> */}
-          {/* <CatList catPics={this.props.cats}/>   */}
+          <CatList catPics={this.props.catsPics}/>  
       </div>
     );
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return { fetchCats: () => dispatch(fetchCats()) }
+  return bindActionCreators({
+    fetchCats: fetchCats,
+  }, dispatch)
 }
+
 
 const mapStateToProps = state => {
 
-  return { cats: state.cats };
+  return { catsPics: state.cats.pictures };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
