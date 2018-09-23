@@ -8,8 +8,7 @@ export function catsReducer(state=[], action) {
         return {...state};
 
         case "FETCH_CATS":
-        console.log([...state])
-        return action.payload;
+        return action.payload.images;
 
         default:
         return state;

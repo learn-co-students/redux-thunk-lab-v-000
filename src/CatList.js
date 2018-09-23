@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 
 const CatList = ({catPics}) => {
   const catPhotos = catPics.map((photo, index) => {
+ 
     return(
       <div>
-        <img alt={`cat ${photo.index}`} src={photo.url} />
+        <img alt={`cat ${index}`} src={photo.url} />
       </div>
     )
   })

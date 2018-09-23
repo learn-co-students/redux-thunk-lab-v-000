@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   render() {
-
+    console.log(this.props.cats)
     return (
       <div className="App">
         <Navbar>
@@ -23,8 +23,10 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
-     
-         {/* <CatList catPics={this.props.cats}/>  */}
+        {/* <div>
+        <img src={this.props.cats[0].url} />
+        </div> */}
+          {/* <CatList catPics={this.props.cats}/>   */}
       </div>
     );
   }
