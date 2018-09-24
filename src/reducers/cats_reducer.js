@@ -1,5 +1,6 @@
 export default function catReducer(state = {
-  cats: [],
+  loading: false,
+  pictures: []
 }, action) {
   switch(action.type){
     case 'LOADING_CATS':
