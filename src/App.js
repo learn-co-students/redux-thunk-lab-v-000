@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap'
+import { fetchCats } from './actions/catActions';
+import { connect } from 'react-redux';
+import CatList from './CatList'
 
-class App extends Component {   
-  
+class App extends Component {
+
+ componentDidMount(){
+   this.props.fetchCats()
+ }
+
   render() {
     return (
       <div className="App">
@@ -21,4 +28,3 @@ class App extends Component {
 
 
 export default App
-
