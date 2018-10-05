@@ -1,0 +1,79 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.9.4/libexec/bin/yarn.js install
+
+PATH: 
+  /Users/jojo/.rvm/gems/ruby-2.3.3/bin:/Users/jojo/.rvm/gems/ruby-2.3.3@global/bin:/Users/jojo/.rvm/rubies/ruby-2.3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Xamarin Workbooks.app/Contents/SharedSupport/path-bin:/Users/jojo/.rvm/gems/ruby-2.3.3/bin:/Users/jojo/.rvm/gems/ruby-2.3.3@global/bin:/Users/jojo/.rvm/rubies/ruby-2.3.3/bin:/Users/jojo/.rvm/bin:/Users/jojo/.rvm/bin
+
+Yarn version: 
+  1.9.4
+
+Node version: 
+  8.10.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/babel-core: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/Cellar/yarn/1.9.4/libexec/lib/cli.js:138128:19)
+      at ontimeout (timers.js:482:11)
+      at tryOnTimeout (timers.js:317:5)
+      at Timer.listOnTimeout (timers.js:277:5)
+
+npm manifest: 
+  {
+    "name": "nested-routes-lab",
+    "version": "0.1.0",
+    "private": true,
+    "babel": {
+      "presets": [
+        "airbnb",
+        "env",
+        "stage-0",
+        "react"
+      ]
+    },
+    "devDependencies": {
+      "jsdom": "^9.9.1",
+      "mocha": "^5.2.0",
+      "react-scripts": "^1.1.4",
+      "webpack": "^3.11.0",
+      "webpack-dev-server": "^3.1.5"
+    },
+    "dependencies": {
+      "babel-core": "^6.22.1",
+      "babel-preset-airbnb": "^2.1.1",
+      "babel-preset-env": "^1.7.0",
+      "babel-preset-react": "^6.24.1",
+      "babel-preset-stage-0": "^6.22.0",
+      "chai": "^4.1.2",
+      "enzyme": "^3.3.0",
+      "enzyme-adapter-react-16": "^1.1.1",
+      "expect": "^1.20.2",
+      "fetch-mock": "^6.5.2",
+      "mocha-multi": "^1.0.1",
+      "nock": "^9.0.9",
+      "react": "^16.4.1",
+      "react-bootstrap": "^0.32.1",
+      "react-dom": "^16.4.1",
+      "react-redux": "^5.0.7",
+      "react-router": "^3.0.2",
+      "redux": "^4.0.0",
+      "redux-mock-store": "^1.2.2",
+      "redux-thunk": "^2.3.0",
+      "sinon": "^6.1.4",
+      "uuid": "^3.0.1"
+    },
+    "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "mocha test/helpers/browser.js test/*.js",
+      "eject": "react-scripts eject"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
