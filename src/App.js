@@ -16,7 +16,12 @@ class App extends Component {
       </div>
     );
   }
+
+  componentDidMount() {
+    
+  }
 }
+
 
 
 
