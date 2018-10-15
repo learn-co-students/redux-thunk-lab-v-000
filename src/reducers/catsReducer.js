@@ -1,4 +1,4 @@
-export default function catsReducer(state = { cats: [] }, action){
+export default function catsReducer(state = [], action){
     switch(action.type){
         case 'LOADING_CATS':
             console.log("LOADING_CATS called")
@@ -7,7 +7,7 @@ export default function catsReducer(state = { cats: [] }, action){
         case 'FETCH_CATS':
             console.log("FETCH_CATS called")
             console.log(action)
-            return {...state, cats: action.payload}
+            return [...action.payload]
 
         default:
             return state

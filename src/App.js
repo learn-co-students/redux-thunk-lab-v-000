@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { fetchCats } from './actions/catActions'
+import CatList from './CatList'
 
 class App extends Component {   
   componentDidMount() {
@@ -9,6 +10,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props.catPics)
     return (
       <div className="App">
         <Navbar>
@@ -18,6 +20,7 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
+        <CatList cats={this.props.catPics} />
       </div>
     );
   }
