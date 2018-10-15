@@ -10,7 +10,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props.catPics)
     return (
       <div className="App">
         <Navbar>
@@ -20,14 +19,14 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
-        <CatList cats={this.props.catPics} />
+        <CatList catPics={this.props.catPics} />
       </div>
     );
   }
 }
 
 function mapStateToProps(state){
-  return { catPics: state.cats }
+  return { catPics: state.cats.pictures }
 }
 
 
