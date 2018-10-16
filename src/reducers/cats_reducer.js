@@ -5,7 +5,7 @@ export default (state = {
     pictures: []
 }, action) => {
 
-    
+    // debugger;
     switch (action.type) {
         case "LOADING_CATS":
             return Object.assign({}, state, {loading: true})
