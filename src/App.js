@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap'
 
 import { connect } from 'react-redux'
-import * as fetchCats  from './actions/catActions'
+import fetchCats  from './actions/catActions'
 
 class App extends Component {   
 
@@ -30,8 +30,8 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => {
-  // debugger;
-  return {fetchCats: () => dispatch(fetchCats)}
+  // console.log(dispatch(fetchCats))
+  return {fetchCats: () => dispatch(fetchCats())}
 }
 
 const mapStateToProps = state => {
