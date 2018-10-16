@@ -31,7 +31,7 @@ class App extends Component {
 
 const mapDispatchToProps = dispatch => {
   // debugger;
-  return {fetchCats: cats => dispatch(fetchCats)}
+  return {fetchCats: () => dispatch(fetchCats)}
 }
 
 const mapStateToProps = state => {
