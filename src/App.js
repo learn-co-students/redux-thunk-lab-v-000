@@ -14,8 +14,7 @@ class App extends Component {
   }
   
   render() {
-    // const {cats} = this.props
-    // debugger;
+    
     return (
       <div className="App">
         <Navbar>
@@ -34,7 +33,6 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => {
-  // console.log(dispatch(fetchCats))
   return {fetchCats: () => dispatch(fetchCats())}
 }
 
