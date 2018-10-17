@@ -1,9 +1,9 @@
 
 
-export default (state = {
+export default function catReducer (state = {
     loading: false,
     pictures: []
-}, action) => {
+}, action) {
 
     // debugger;
     switch (action.type) {

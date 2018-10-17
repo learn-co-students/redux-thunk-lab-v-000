@@ -1,9 +1,9 @@
 
 
-export default function fetchCats() {
+export function fetchCats() {
     
     return (dispatch) => {
-        // debugger;
+        
         dispatch({type: "LOADING_CATS"})
         
         return fetch('http://10.0.0.99:4000/db')
