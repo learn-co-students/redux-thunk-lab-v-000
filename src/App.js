@@ -26,9 +26,11 @@ class App extends Component {
   }
 }
 
+// mapStateToProps is a shorthand to access one slice of the global state of the app (kept in the redux store) via props
 const mapStateToProps = state => {
   return { catPics: state.cats.pictures }
 }
+// mapDispatchToProps is a shorthand that lets the app component dispatch an action via props
  const mapDispatchToProps = dispatch => ({
   fetchCats: () => dispatch(fetchCats())
 })
