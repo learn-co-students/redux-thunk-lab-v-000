@@ -6,7 +6,9 @@ import CatList from './CatList'
 
 class App extends Component {
   componentDidMount() {
-    fetchCats();
+    if (this.props.catPics.length === 0) {
+      this.props.addCats();
+    }   
   }   
   
   render() {
@@ -16,7 +18,7 @@ class App extends Component {
           <Navbar.Header>
             <Navbar.Brand>
               <a href="#">CatBook</a>
-              <CatList catPics={this.props.catPics} fetchCats={this.props.fetchCats} />
+              <CatList catPics={this.props.catPics} />
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
@@ -26,12 +28,11 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  // debugger;
-  catPics: state.cats[0]
+  return { catPics: state.cats }
 }
 
-const mapDispatchToProps = fetchCats => {
-  fetchCats();
+const mapDispatchToProps = dispatch => {
+  return { addCats: () => dispatch(fetchCats()) }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
