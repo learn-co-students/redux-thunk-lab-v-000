@@ -1,8 +1,8 @@
 import React from 'react';
 
-export function CatList(props) {
+const CatList = (props) => {
 
-  const catImages = () => {
+  function catImages() {
     return props.catPics.map(catPic => {
       return (
         <div>
@@ -18,3 +18,5 @@ export function CatList(props) {
     </div>
   )
 }
+
+export default CatList
