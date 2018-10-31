@@ -1,13 +1,15 @@
-export default (state = [], action) => {
-  let index;
-  let catPics;
+export default (state = {
+  loading: false,
+  pictures: []
+}, action) => {
 
   switch (action.type) {
     case 'LOADING_CATS':
-      return console.log("loading cats");
+      return {...state, loading: true}
 
     case 'FETCH_CATS':
-      return console.log("fetching cats");
+    debugger
+      return {loading: false, pictures: action.payload};
 
     default:
       return state;
