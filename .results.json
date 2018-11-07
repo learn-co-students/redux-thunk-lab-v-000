@@ -1,0 +1,115 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 6,
+    "passes": 5,
+    "pending": 0,
+    "failures": 1,
+    "start": "2018-11-07T01:34:06.297Z",
+    "end": "2018-11-07T01:34:06.681Z",
+    "duration": 384
+  },
+  "tests": [
+    {
+      "title": "should use the componentDidMount lifecycle method to fetchCats",
+      "fullTitle": "<App/> should use the componentDidMount lifecycle method to fetchCats",
+      "duration": 103,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "uses redux-promise to create an action object with type of \"FETCH_CATS\" and a payload of cat images when fetchCats is dispatched",
+      "fullTitle": "async actions uses redux-promise to create an action object with type of \"FETCH_CATS\" and a payload of cat images when fetchCats is dispatched",
+      "duration": 47,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should display the cat pics wrapped in <img> tags",
+      "fullTitle": "<CatList/> should display the cat pics wrapped in <img> tags",
+      "duration": 22,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should have props catPics",
+      "fullTitle": "<CatList/> should have props catPics",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should return the initial state",
+      "fullTitle": "cats reducer should return the initial state",
+      "duration": 7,
+      "currentRetry": 0,
+      "err": {
+        "stack": "Error: Expected { loading: false, pictures: [ { id: 1, url: 'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&h=350' } ] } to equal { loading: false, pictures: [] }\n    at assert (node_modules/expect/lib/assert.js:29:9)\n    at Expectation.toEqual (node_modules/expect/lib/Expectation.js:81:30)\n    at Context.<anonymous> (test/cats-reducer-test.js:8:7)",
+        "message": "Expected { loading: false, pictures: [ { id: 1, url: 'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&h=350' } ] } to equal { loading: false, pictures: [] }",
+        "actual": "{\n  \"loading\": false\n  \"pictures\": [\n    {\n      \"id\": 1\n      \"url\": \"https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&h=350\"\n    }\n  ]\n}",
+        "expected": "{\n  \"loading\": false\n  \"pictures\": []\n}",
+        "showDiff": true
+      }
+    },
+    {
+      "title": "should handle the FETCH_CATS action",
+      "fullTitle": "cats reducer should handle the FETCH_CATS action",
+      "duration": 3,
+      "currentRetry": 0,
+      "err": {}
+    }
+  ],
+  "pending": [],
+  "failures": [
+    {
+      "title": "should return the initial state",
+      "fullTitle": "cats reducer should return the initial state",
+      "duration": 7,
+      "currentRetry": 0,
+      "err": {
+        "stack": "Error: Expected { loading: false, pictures: [ { id: 1, url: 'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&h=350' } ] } to equal { loading: false, pictures: [] }\n    at assert (node_modules/expect/lib/assert.js:29:9)\n    at Expectation.toEqual (node_modules/expect/lib/Expectation.js:81:30)\n    at Context.<anonymous> (test/cats-reducer-test.js:8:7)",
+        "message": "Expected { loading: false, pictures: [ { id: 1, url: 'https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&h=350' } ] } to equal { loading: false, pictures: [] }",
+        "actual": "{\n  \"loading\": false\n  \"pictures\": [\n    {\n      \"id\": 1\n      \"url\": \"https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?auto=compress&cs=tinysrgb&h=350\"\n    }\n  ]\n}",
+        "expected": "{\n  \"loading\": false\n  \"pictures\": []\n}",
+        "showDiff": true
+      }
+    }
+  ],
+  "passes": [
+    {
+      "title": "should use the componentDidMount lifecycle method to fetchCats",
+      "fullTitle": "<App/> should use the componentDidMount lifecycle method to fetchCats",
+      "duration": 103,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "uses redux-promise to create an action object with type of \"FETCH_CATS\" and a payload of cat images when fetchCats is dispatched",
+      "fullTitle": "async actions uses redux-promise to create an action object with type of \"FETCH_CATS\" and a payload of cat images when fetchCats is dispatched",
+      "duration": 47,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should display the cat pics wrapped in <img> tags",
+      "fullTitle": "<CatList/> should display the cat pics wrapped in <img> tags",
+      "duration": 22,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should have props catPics",
+      "fullTitle": "<CatList/> should have props catPics",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should handle the FETCH_CATS action",
+      "fullTitle": "cats reducer should handle the FETCH_CATS action",
+      "duration": 3,
+      "currentRetry": 0,
+      "err": {}
+    }
+  ]
+}
