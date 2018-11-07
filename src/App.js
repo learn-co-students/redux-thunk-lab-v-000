@@ -5,6 +5,10 @@ import CatList from './CatList'
 import { fetchCats } from './actions/catActions'
 
 class App extends Component {   
+    
+componentDidMount() {
+  this.props.getCats()
+}
   
   render() {
     return (
@@ -12,7 +16,7 @@ class App extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <CatList catPics={["test", "test2"]} fetchCats={this.props.fetchCats}/>
+              <CatList catPics={this.props.catInfo}/>
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
@@ -23,13 +27,13 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    catPics: state.pictures
+    catInfo: state.cats.pictures
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCats: fetchCats
+    getCats: () => dispatch(fetchCats())
   }
 }
 

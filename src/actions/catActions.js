@@ -1,8 +1,11 @@
 export function fetchCats() {
+  console.log('level 1')
   return (dispatch) => {
+    console.log('level 2')
     dispatch({ type: 'LOADING_CATS' });
-    const cats = fetch('https://3e41b65120d84c1fbe31c95bbdc84585.vfs.cloud9.us-east-2.amazonaws.com/')
-      .then(response => response.json())
-      .then(cats => dispatch({ type: 'FETCH_CATS', payload: cats.images }));
+    return fetch('http://localhost:4000/db')
+      .then( resp => resp.json())
+      .then( cats => dispatch({ type: "FETCH_CATS", payload: cats.images }))
+
   };
 }
