@@ -21,6 +21,7 @@ componentDidMount(){
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
+        <CatList catPics={this.props.catPics} />
       </div>
     );
   }
