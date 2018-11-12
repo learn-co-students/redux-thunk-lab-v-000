@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap'
-import fetchCats from './actions/catActions'
+import {fetchCats} from './actions/catActions'
 import {connect} from 'react-redux'
 import CatList from './CatList'
 
@@ -21,16 +21,16 @@ componentDidMount(){
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
-
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {catPics: state.cats}
+const mapStateToProps = state => {
+  return {catPics: state.cats.pictures}
+}
 
-const mapDispatchToProps = dispatch =>({
-  fetchCats: () => dispatch(fetchCats())
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+// const mapDispatchToProps = dispatch =>{
+//   return {fetchCats: () => dispatch(fetchCats())}
+// }
+export default connect(mapStateToProps, {fetchCats})(App)

@@ -2,6 +2,6 @@ import React from 'react'
 import { combineReducers } from 'redux'
 import catsReducer from './cats_reducer'
 
-export default function rootReducer (){
-  return combineReducers({cats: catsReducer})
-}
+const rootReducer = combineReducers({cats: catsReducer})
+
+export default rootReducer
