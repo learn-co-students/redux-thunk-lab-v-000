@@ -1,4 +1,4 @@
-import catsReducer from '../src/reducers/cats_reducer'
+import catsReducer from '../src/reducers/index'
 import expect from 'expect'
 
 describe('cats reducer', () => {
