@@ -15,7 +15,7 @@ class App extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <CatList pics={this.props.catPics}/>
+              <CatList catPics={this.props.catPics}/>
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
