@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
-import Restaurant from './Restaurant';
+import Cat from './Cat';
 
 class CatList extends Component {
   
   render() {
-    const { store } = this.props;
-    const cats = store.getState().cats.map((cat, index) => {
-      return (<img> <key={index} cat={cat} store={store} /> </img>)
+    
+    const cats = this.props.catPics.map((picture, index) => {
+      return (<img src={picture} /> )
     });
     
     return(
       <ul>
-        {restaurants}
+        {cats}
       </ul>
     );
   }
 };
 
-export default Restaurants;
+
+
+export default CatList;
