@@ -1,0 +1,127 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 6,
+    "passes": 2,
+    "pending": 0,
+    "failures": 4,
+    "start": "2018-12-10T17:25:21.108Z",
+    "end": "2018-12-10T17:25:21.169Z",
+    "duration": 61
+  },
+  "tests": [
+    {
+      "title": "should use the componentDidMount lifecycle method to fetchCats",
+      "fullTitle": "<App/> should use the componentDidMount lifecycle method to fetchCats",
+      "duration": 7,
+      "currentRetry": 0,
+      "err": {
+        "stack": "Error: Expected the reducer to be a function.\n    at createStore (node_modules/redux/lib/redux.js:97:11)\n    at /home/mntjones/redux-thunk-lab-v-000/node_modules/redux/lib/redux.js:561:31\n    at createStore (node_modules/redux/lib/redux.js:93:33)\n    at Context.<anonymous> (test/app-component-test.js:46:17)",
+        "message": "Expected the reducer to be a function."
+      }
+    },
+    {
+      "title": "uses redux-promise to create an action object with type of \"FETCH_CATS\" and a payload of cat images when fetchCats is dispatched",
+      "fullTitle": "async actions uses redux-promise to create an action object with type of \"FETCH_CATS\" and a payload of cat images when fetchCats is dispatched",
+      "duration": 10,
+      "currentRetry": 0,
+      "err": {
+        "stack": "TypeError: store.dispatch(...).then is not a function\n    at Context.<anonymous> (test/cat-actions-test.js:32:8)",
+        "message": "store.dispatch(...).then is not a function"
+      }
+    },
+    {
+      "title": "should display the cat pics wrapped in <img> tags",
+      "fullTitle": "<CatList/> should display the cat pics wrapped in <img> tags",
+      "duration": 10,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should have props catPics",
+      "fullTitle": "<CatList/> should have props catPics",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should return the initial state",
+      "fullTitle": "cats reducer should return the initial state",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {
+        "stack": "TypeError: (0 , _cats_reducer2.default) is not a function\n    at Context.<anonymous> (test/cats-reducer-test.js:7:7)",
+        "message": "(0 , _cats_reducer2.default) is not a function"
+      }
+    },
+    {
+      "title": "should handle the FETCH_CATS action",
+      "fullTitle": "cats reducer should handle the FETCH_CATS action",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {
+        "stack": "TypeError: (0 , _cats_reducer2.default) is not a function\n    at Context.<anonymous> (test/cats-reducer-test.js:14:7)",
+        "message": "(0 , _cats_reducer2.default) is not a function"
+      }
+    }
+  ],
+  "pending": [],
+  "failures": [
+    {
+      "title": "should use the componentDidMount lifecycle method to fetchCats",
+      "fullTitle": "<App/> should use the componentDidMount lifecycle method to fetchCats",
+      "duration": 7,
+      "currentRetry": 0,
+      "err": {
+        "stack": "Error: Expected the reducer to be a function.\n    at createStore (node_modules/redux/lib/redux.js:97:11)\n    at /home/mntjones/redux-thunk-lab-v-000/node_modules/redux/lib/redux.js:561:31\n    at createStore (node_modules/redux/lib/redux.js:93:33)\n    at Context.<anonymous> (test/app-component-test.js:46:17)",
+        "message": "Expected the reducer to be a function."
+      }
+    },
+    {
+      "title": "uses redux-promise to create an action object with type of \"FETCH_CATS\" and a payload of cat images when fetchCats is dispatched",
+      "fullTitle": "async actions uses redux-promise to create an action object with type of \"FETCH_CATS\" and a payload of cat images when fetchCats is dispatched",
+      "duration": 10,
+      "currentRetry": 0,
+      "err": {
+        "stack": "TypeError: store.dispatch(...).then is not a function\n    at Context.<anonymous> (test/cat-actions-test.js:32:8)",
+        "message": "store.dispatch(...).then is not a function"
+      }
+    },
+    {
+      "title": "should return the initial state",
+      "fullTitle": "cats reducer should return the initial state",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {
+        "stack": "TypeError: (0 , _cats_reducer2.default) is not a function\n    at Context.<anonymous> (test/cats-reducer-test.js:7:7)",
+        "message": "(0 , _cats_reducer2.default) is not a function"
+      }
+    },
+    {
+      "title": "should handle the FETCH_CATS action",
+      "fullTitle": "cats reducer should handle the FETCH_CATS action",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {
+        "stack": "TypeError: (0 , _cats_reducer2.default) is not a function\n    at Context.<anonymous> (test/cats-reducer-test.js:14:7)",
+        "message": "(0 , _cats_reducer2.default) is not a function"
+      }
+    }
+  ],
+  "passes": [
+    {
+      "title": "should display the cat pics wrapped in <img> tags",
+      "fullTitle": "<CatList/> should display the cat pics wrapped in <img> tags",
+      "duration": 10,
+      "currentRetry": 0,
+      "err": {}
+    },
+    {
+      "title": "should have props catPics",
+      "fullTitle": "<CatList/> should have props catPics",
+      "duration": 1,
+      "currentRetry": 0,
+      "err": {}
+    }
+  ]
+}

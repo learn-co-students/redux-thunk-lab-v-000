@@ -14,9 +14,6 @@ class App extends Component {
   }
   
   render() {
-    
-    const cats = this.props.cats.map(cat => <li key={cat.id}>{cat.name}</li>);
-    
     return (
       <div className="App">
         <Navbar>
