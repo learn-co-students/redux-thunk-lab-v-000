@@ -1,16 +1,19 @@
 import React, { Component} from 'react'
 import CatList from '../CatList'
 import { connect } from 'react-redux'
+import { fetchCats } from '../actions/catActions'
 
 class CatsContainer extends Component {
+
+  componentDidMount(){
+    this.props.fetchCats();
+  }
 
   render(){
     return (
       <div>
         <CatList
-          loadingCats={this.props.loadingCats}
-          fetchCats={this.props.fetchCats}
-          catPics={this.props.catPics}
+          catPics={this.props.catPics || []}
         />
       </div>
     );
@@ -18,11 +21,11 @@ class CatsContainer extends Component {
 
 }
 
-const mapStateToProps = state => ({catPics: state.cats })
+const mapStateToProps = state => ({ catPics: state.pictures })
 
 const mapDispatchToProps = dispatch => ({
   loadingCats: loading => dispatch({type: 'LOADING_CATS', loading}),
-  fetchCats: cats => dispatch({type: 'FETCH_CATS', cats})
+  fetchCats: () => fetchCats()
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(CatsContainer)
