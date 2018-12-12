@@ -1,4 +1,4 @@
-import { Combine } from 'redux'
+import { combineReducers } from 'redux'
 import catsReducer from './cats_reducer'
 
 const rootReducer = combineReducers({
