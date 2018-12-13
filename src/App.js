@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap'
 
 class App extends Component {   
+
+
+
+// componentDidMount() {
+//   this.interval = setInterval(this.fetchWeather, 15000);
+// }
+
+  
   
   render() {
     return (

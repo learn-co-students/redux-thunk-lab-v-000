@@ -6,6 +6,9 @@ export default function catsReducer(
   switch (action.type) {
 
     case 'FETCH_CATS':
+    	return true    
+
+    case 'LOADING_CATS':
     	return true
 
     default:
