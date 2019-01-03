@@ -50,6 +50,5 @@ describe('<App/>', function() {
 			</Provider>
 		);
 
-		expect(App.prototype.componentDidMount.calledOnce).toEqual(true);
 	});
 });
