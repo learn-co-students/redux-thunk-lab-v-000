@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import {Navbar} from 'react-bootstrap'
+import {Navbar} from 'react-bootstrap';
+import CatsContainer from './containers/CatsContainer';
 
-class App extends Component {   
+
+class App extends Component {
+
+  componentDidMount(){
+
+  }
   
   render() {
     return (
@@ -13,6 +19,7 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
+          <CatsContainer />
       </div>
     );
   }
@@ -21,4 +28,3 @@ class App extends Component {
 
 
 export default App
-
