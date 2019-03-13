@@ -3,6 +3,6 @@ export function fetchCats() {
       dispatch({ type: 'LOADING_CATS' });
       return fetch('http://localhost:4000/db')
         .then(response => response.json())
-        .then(catJSON => dispatch({ type: 'FETCH_CATS', payload: catJSON.images }));
+        .then(catJSON => dispatch({ type: 'BETCH_CATS', payload: catJSON.images }));
     }
   }
