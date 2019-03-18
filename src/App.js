@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap'
+import { connect } from 'react-redux'
 
-class App extends Component {   
-  
+class App extends Component {
+
+  handleOnClick() {
+    this.props.fetchCats()
+  }
+
+
+
   render() {
     return (
       <div className="App">
@@ -18,7 +25,12 @@ class App extends Component {
   }
 }
 
+function mapDispatchToProps(dispatch){
+  return { fetchCats: () => dispatch(fetchCats()) }
+}
 
+function mapStateToProps(state){
+  return {cats: state.cats}
+}
 
-export default App
-
+export default connect(mapStateToProps, mapDispatchToProps)(App)
