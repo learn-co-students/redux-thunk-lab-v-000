@@ -1,13 +1,15 @@
-export default function manageCats(state = {
-  cats: [],
+export default function manageCats(
+  state = {
+    loading: false,
+    pictures: []
 }, action) {
   switch (action.type) {
 
     case 'LOADING_CATS':
-      return 'woohoo';
+      return {...state, loading: true};
 
     case 'FETCH_CATS':
-      return action.cats;
+      return {loading: false, pictures: action.payload};
 
     default:
       return state;

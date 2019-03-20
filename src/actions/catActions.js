@@ -1,12 +1,9 @@
 export function fetchCats() {
-  const cats = fetch('http://localhost:4000/db').then(response => {
-    return response.json()
-  }).then(responseJSON => {
-    return responseJSON.images
-  })
-  console.log(cats)
-  return {
-    type: 'FETCH_CATS',
-    cats
+  return (dispatch) => {
+    dispatch({ type: 'LOADING_CATS' });
+
+    return fetch('http://localhost:4000/db')
+      .then(response => response.json())
+      .then(cats => dispatch({ type: 'FETCH_CATS', payload: cats.images }));
   };
-};
+}
