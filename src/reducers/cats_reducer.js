@@ -2,8 +2,7 @@ export default function cats_reducer(
   state = {
     loading: false,
     pictures: []
-    }
-    , action) {
+    }, action) {
 
   switch(action.type) {
     

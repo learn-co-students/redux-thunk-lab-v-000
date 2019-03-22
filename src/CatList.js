@@ -3,7 +3,7 @@ import React from 'react';
 const CatList = (props) => {
 
   function listCats() {
-      return props.catPics.map((catPic, index) => {
+      return props.catPics && props.catPics.map((catPic, index) => {
         return (
           <div key={index}>
             <img src={catPic.url} alt="cat"/>
@@ -14,7 +14,7 @@ const CatList = (props) => {
   
     return (
       <div> 
-        { listCats }
+        { listCats() }
       </div>
       )
 }
