@@ -1,16 +1,14 @@
 export function fetchCats() {
-  const cats = fetch('http://localhost:4000/db')
-  .then(response => response.json()).then(responseJSON => {responseJSON.images})
-  return {
-      type: 'FETCH_CATS',
-      cats: cats
-    };
+  return (dispatch) => {
 
-  //why this and not what's in the lesson code? 
-  // export function fetchCats() {
-  //   const cats = fetch('http://localhost:4000/db').then(response => response.json())
-  //   return {
-  //     type: 'FETCH_CATS',
-  //     cats: cats
-  //   };
-  // } is it because the data is nested? 
+    dispatch({ type: "LOADING_CATS"});
+
+    return fetch('http://localhost:4000/db')
+
+        .then(response => response.json())
+        // .then(responseJSON => {responseJSON.images})
+        .then(cats => dispatch({ type: "FETCH_CATS", payload: cats.images}))
+  };
+}
+
+
