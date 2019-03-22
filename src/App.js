@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap'
+import { connect } from 'react-redux';
+import CatList from './catlist';
 
 class App extends Component {   
   
@@ -9,7 +11,9 @@ class App extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">CatBook</a>
+              <a href="#">
+                <CatList />
+              </a>
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
@@ -18,7 +22,7 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = ({ cats }) => ({ cats })
 
-
-export default App
+export default connect(mapStateToProps)(App)
 
