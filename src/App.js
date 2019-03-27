@@ -4,7 +4,12 @@ import { connect } from 'react-redux';
 import CatList from './CatList';
 import {fetchCats} from './actions/catActions'
 
-class App extends Component {   
+class App extends Component { 
+
+  handleOnSubmit(event) {
+    event.preventDefault();
+    this.props.fetchCats()
+  } 
 
   componentDidMount() {
     debugger
@@ -18,7 +23,7 @@ class App extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">CatBook</a>
+              <a href="#" onClick={(event) => this.handleOnSubmit(event)} >CatBook</a>
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
