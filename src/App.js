@@ -6,13 +6,13 @@ import {Navbar} from 'react-bootstrap'
 
 class App extends Component {  
 
-  state = {
-    loading: false,
-    pictures: []
-  } 
+  // state = {
+  //   loading: false,
+  //   pictures: []
+  // } 
 
   componentDidMount = () => {
-    this.props.dispatch(fetchCats())
+    const cats = this.props.dispatch(fetchCats())
   }
   
   render() {
@@ -25,7 +25,7 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
-        <CatList  />
+        <CatList cats={this.cats}/>
       </div>
     )
   }

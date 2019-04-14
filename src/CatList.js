@@ -2,16 +2,13 @@ import React from 'react'
 // import { connect } from 'react-redux'
 
 
-class CatList extends React.Component {	
+const CatList = ({ cats }) => {	
 
-	render() {
-		return (
-			<div>
-				CATS
-			</div>
-		)
-	}
-
+	return (
+		<div>
+			catPics
+		</div>
+	)
 }
 
 export default CatList
