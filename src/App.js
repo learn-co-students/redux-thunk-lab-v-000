@@ -12,7 +12,7 @@ class App extends Component {
   // } 
 
   componentDidMount = () => {
-    const cats = this.props.dispatch(fetchCats())
+    this.props.fetchCats()
   }
   
   render() {
@@ -25,7 +25,7 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
-        <CatList cats={this.cats}/>
+        <CatList />
       </div>
     )
   }
@@ -37,5 +37,5 @@ const mapStateToProps = state => {
   } 
 }
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps, { fetchCats })(App)
 
