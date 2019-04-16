@@ -7,15 +7,12 @@ import {Navbar} from 'react-bootstrap'
 class App extends Component {  
 
   componentDidMount() {
-    this.props.dispatch(fetchCats())
-    // this.setState({
-    //   pictures: this.props.cats.pictures
-    // })
+    this.props.fetchCats()
   }
   
   render() {
     const catPics = this.props.cats.pictures
-    // console.log('catPics: ', this.props.cats)
+   
     return (
       <div className="App">
         <Navbar>

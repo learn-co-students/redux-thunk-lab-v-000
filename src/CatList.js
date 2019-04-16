@@ -1,12 +1,9 @@
 import React from 'react'
-// import { connect } from 'react-redux'
-
 
 const CatList = ({catPics}) => {	
 
 	let arrCatPics
-	// console.log('????CATS: ', catPics)
-	// console.log('catPics Length: ', Object.keys(catPics).length)
+	
 	if (Object.keys(catPics).length < 2) {
 		// Convert the JavaScript object with numeric keys into an array
 		arrCatPics = []
@@ -30,9 +27,5 @@ const CatList = ({catPics}) => {
 		</div>
 	)
 }
-
-// const mapStateToProps = state => {
-// 	return {cats: state.pictures}
-// }
 
 export default CatList
