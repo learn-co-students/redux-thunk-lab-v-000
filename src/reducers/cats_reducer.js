@@ -1,4 +1,6 @@
-function cats_reducer(state = {loading: false, pictures: []}, action) {
+const defaultState = {loading: false, pictures: []}
+
+function cats_reducer(state = defaultState, action) {
 
 	switch(action.type) {
 
@@ -8,6 +10,7 @@ function cats_reducer(state = {loading: false, pictures: []}, action) {
 		
 		case 'FETCH_CATS': {
 			console.log('FETCH_CATS')
+			console.log('STATE: ', state)
 			if (action.payload) {
 				return {...state, pictures: [...state.pictures, action.payload]}
 			}
