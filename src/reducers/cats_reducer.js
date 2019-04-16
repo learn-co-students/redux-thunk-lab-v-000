@@ -7,7 +7,7 @@ function cats_reducer(state = {loading: false, pictures: []}, action) {
 		}
 		
 		case 'FETCH_CATS': {
-			console.log('PAYLOAD: ', action.payload)
+			console.log('FETCH_CATS')
 			if (action.payload) {
 				return {...state, pictures: [...state.pictures, action.payload]}
 			}

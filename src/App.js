@@ -15,7 +15,7 @@ class App extends Component {
   
   render() {
     const catPics = this.props.cats.pictures
-    
+    // console.log('catPics: ', this.props.cats)
     return (
       <div className="App">
         <Navbar>
