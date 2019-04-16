@@ -4,14 +4,18 @@ import fetchCats from './actions/catActions'
 import CatList from './CatList'
 import {Navbar} from 'react-bootstrap'
 
-class App extends Component {   
+class App extends Component {  
 
   componentDidMount() {
     this.props.fetchCats()
+    // this.setState({
+    //   pictures: this.props.cats.pictures
+    // })
   }
   
   render() {
     const catPics = this.props.cats.pictures
+    
     return (
       <div className="App">
         <Navbar>

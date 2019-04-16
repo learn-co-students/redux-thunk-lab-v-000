@@ -5,11 +5,15 @@ function cats_reducer(state = {loading: false, pictures: []}, action) {
 		case 'LOADING_CATS': {
 			console.log('LOADING_CATS')
 		}
-
+		
 		case 'FETCH_CATS': {
-			return { ...state, 
-				     pictures: action.payload
-				   }
+			console.log('PAYLOAD: ', action.payload)
+			if (action.payload) {
+				return {...state, pictures: [...state.pictures, action.payload]}
+			}
+
+			return state
+
 		}
 			
 		default:
