@@ -4,18 +4,14 @@ import fetchCats from './actions/catActions'
 import CatList from './CatList'
 import {Navbar} from 'react-bootstrap'
 
-class App extends Component {  
+class App extends Component {   
 
-  // state = {
-  //   loading: false,
-  //   pictures: []
-  // } 
-
-  componentDidMount = () => {
+  componentDidMount() {
     this.props.fetchCats()
   }
   
   render() {
+    const catPics = this.props.cats.pictures
     return (
       <div className="App">
         <Navbar>
@@ -25,7 +21,7 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
-        <CatList />
+        <CatList catPics={catPics}/>
       </div>
     )
   }
@@ -33,7 +29,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    cats: state.cats
+    cats: state.pictures
   } 
 }
 
