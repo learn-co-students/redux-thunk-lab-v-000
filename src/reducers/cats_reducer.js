@@ -8,11 +8,10 @@ function cats_reducer(state = initialState, action) {
 		
 			alert('Loading Cat Images')
 		
-		case 'FETCH_CATS': {
+		case 'FETCH_CATS':
 			
 			if (action.payload) 
 				return {...state, pictures: [...state.pictures, action.payload]}
-			}
 
 			return state
 			

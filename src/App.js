@@ -18,8 +18,16 @@ class App extends Component {
   }
   
   render() {
-    const catPics = this.props.cats.pictures
-   
+    const arrCatPics = this.props.cats.pictures
+
+    let catPics
+  
+    if (arrCatPics.length > 0) {
+      catPics = arrCatPics[0]
+    } else {
+         catPics = arrCatPics
+        }
+    
     return (
       <div className="App">
         <Navbar>
@@ -42,4 +50,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { fetchCats })(App)
-
