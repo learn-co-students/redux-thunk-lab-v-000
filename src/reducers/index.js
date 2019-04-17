@@ -4,4 +4,3 @@ import catsReducer from './cats_reducer'
 export default combineReducers({
 	pictures: catsReducer
 })
-

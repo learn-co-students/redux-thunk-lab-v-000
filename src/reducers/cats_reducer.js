@@ -1,23 +1,20 @@
-const defaultState = {loading: false, pictures: []}
+const initialState = {loading: false, pictures: []}
 
-function cats_reducer(state = defaultState, action) {
+function cats_reducer(state = initialState, action) {
 
 	switch(action.type) {
 
-		case 'LOADING_CATS': {
-			console.log('LOADING_CATS')
-		}
+		case 'LOADING_CATS': 
+		
+			alert('Loading Cat Images')
 		
 		case 'FETCH_CATS': {
-			console.log('FETCH_CATS')
-			console.log('STATE: ', state)
-			if (action.payload) {
+			
+			if (action.payload) 
 				return {...state, pictures: [...state.pictures, action.payload]}
 			}
 
 			return state
-
-		}
 			
 		default:
 

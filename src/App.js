@@ -1,3 +1,10 @@
+/*
+  TO GET CATS DATA FOR THIS APP:
+  flatiron_school_labs/react_redux_labs/cats-api (in a separate server)
+  npm install & npm start
+  (Point browser to http://localhost:4000/db to see a 
+   JSON collection of 20 cat image objects)
+*/
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import fetchCats from './actions/catActions'
