@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import fetchCats from './actions/catActions'
+import { fetchCats } from './actions/catActions'
 import CatList from './CatList'
 import {Navbar} from 'react-bootstrap'
 
@@ -11,14 +11,14 @@ class App extends Component {
   }
   
   render() {
-    const arrCatData = this.props.cats.pictures
+    const arrCatPics = this.props.cats.pictures
 
     let catPics
   
-    if (arrCatData.length > 0) {
-      catPics = arrCatData[0]
+    if (arrCatPics.length > 0) {
+      catPics = arrCatPics[0]
     } else {
-         catPics = arrCatData
+         catPics = arrCatPics
         }
     
     return (

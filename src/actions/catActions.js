@@ -1,6 +1,6 @@
 import fetch from 'cross-fetch' // npm install --save cross-fetch
 
-function fetchCats() {
+export const fetchCats = () => {
 	// Thunk middleware knows how to handle functions.
 	// It passes the dispatch method as an argument to the function,
 	// thus making it able to dispatch actions itself.
@@ -8,7 +8,7 @@ function fetchCats() {
 		// First dispatch: the app state is updated to inform
     	// that data is loading
 		dispatch({type: 'LOADING_CATS'})
-		fetch('http://localhost:4000/db')
+		return fetch('http://localhost:4000/db')
 				.then(response => {
 					return response.json()
 				})
@@ -21,5 +21,3 @@ function fetchCats() {
 				})
 	}
 }
-
-export default fetchCats
