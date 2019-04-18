@@ -11,16 +11,13 @@ class App extends Component {
   }
   
   render() {
-    const arrCatPics = this.props.cats.pictures
 
     let catPics
-  
-    if (arrCatPics.length > 0) {
-      catPics = arrCatPics[0]
-    } else {
-         catPics = arrCatPics
-        }
-    
+
+    if (this.props.cats.pictures.length > 0) {
+        catPics = this.props.cats.pictures[0]
+    } else { catPics = this.props.cats.pictures }
+
     return (
       <div className="App">
         <Navbar>
