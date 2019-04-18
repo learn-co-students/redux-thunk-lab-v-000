@@ -11,14 +11,14 @@ class App extends Component {
   }
   
   render() {
-    const arrCatPics = this.props.cats.pictures
+    const arrCatData = this.props.cats.pictures
 
     let catPics
   
-    if (arrCatPics.length > 0) {
-      catPics = arrCatPics[0]
+    if (arrCatData.length > 0) {
+      catPics = arrCatData[0]
     } else {
-         catPics = arrCatPics
+         catPics = arrCatData
         }
     
     return (
