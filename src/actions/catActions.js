@@ -1,4 +1,4 @@
-export default function fetchCats() {
+export const fetchCats = () => {
    return (dispatch) => {
      dispatch({ type: 'LOADING_CATS' });
      console.log("loading cats")
