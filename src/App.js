@@ -8,11 +8,10 @@ class App extends Component {
 
   componentDidMount() {
     console.log('app mounted')
-    const fetchCats = this.props.fetchCats()
-    fetchCats.then(
-      resp => this.setState({
-        pictures: resp.payload
-      }))
+    const cats = this.props.fetchCats()
+    this.setState({
+        pictures: cats
+      })
   }
   
   render() {
