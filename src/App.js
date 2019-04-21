@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {Navbar} from 'react-bootstrap'
-import {connect} from 'react-redux'
-import CatList from './CatList'
+import {Navbar} from 'react-bootstrap';
+import {connect} from 'react-redux';
+import CatList from './CatList';
 import { fetchCats } from './actions/catActions';
 
 
@@ -28,6 +28,10 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => ({catPics: state.pictures})
+const mapStateToProps = state => ({
+catPics: state.catsReducer.pictures
+})
 
-export default connect({mapStateToProps}, { fetchCats })(App)
+export default connect(mapStateToProps, { fetchCats })(App);
+
+// console.log('state.pictures', state.catsReducer.pictures)
