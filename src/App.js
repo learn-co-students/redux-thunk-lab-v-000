@@ -7,7 +7,7 @@ import { fetchCats } from './actions/catActions';
 class App extends Component {
 
   componentDidMount() {
-    fetchCats();
+    this.props.fetchCats();
   }
 
   render() {
@@ -27,6 +27,14 @@ class App extends Component {
   }
 };
 
-const mapStateToProps = ({state}) => { state };
+const mapStateToProps = ({state}) => {
+  return catPics: state.cats 
+};
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchCats: fetchCats,
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
