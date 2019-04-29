@@ -28,12 +28,12 @@ class App extends Component {
 };
 
 const mapStateToProps = ({state}) => {
-  return catPics: state.cats 
+  return catPics: state.cats
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchCats: fetchCats,
+    fetchCats: () => fetchCats()
   };
 }
 
