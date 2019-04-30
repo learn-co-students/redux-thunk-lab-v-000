@@ -3,6 +3,7 @@ import {Navbar} from 'react-bootstrap';
 // import { images } from '../cat-api/cats';
 import { connect } from 'react-redux';
 import { fetchCats } from './actions/catActions';
+import CatList from './Catlist';
 
 class App extends Component {
 
@@ -17,7 +18,7 @@ class App extends Component {
           <Navbar.Header>
             <Navbar.Brand>
               <a href="#">
-
+                <CatList catPics={this.props.catPics}/>
               </a>
             </Navbar.Brand>
           </Navbar.Header>
@@ -28,7 +29,7 @@ class App extends Component {
 };
 
 const mapStateToProps = ({state}) => {
-  return catPics: state.cats
+  return { catPics: state.cats }
 };
 
 const mapDispatchToProps = dispatch => {
