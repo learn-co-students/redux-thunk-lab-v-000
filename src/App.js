@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap'
 import {connect} from 'react-redux'
-import fetchCats from './actions/catActions'
+import * as actions from './actions/catActions.js'
 import CatList from './CatList'
+import { bindActionCreators } from 'redux'
 
 
 class App extends Component {
 
   componentDidMount() {
-    debugger
-    // this.props.fetchCats()
+    this.props.actions.fetchCats()
   }
 
   render() {
@@ -28,4 +28,10 @@ class App extends Component {
   }
 }
 
-export default connect(state => ({ catPics: state.cats.pictures }), {fetchCats}) (App)
+const mapDispatchToProps = (dispatch) => {
+  return {
+    actions: bindActionCreators(actions, dispatch)
+  }
+}
+
+export default connect(state => ({ catPics: state.cats.pictures }), mapDispatchToProps) (App)
