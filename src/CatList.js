@@ -6,9 +6,11 @@ class CatList extends Component {
     return(
       <div>
         {this.props.catPics.map(catPic => {
-          <img src={catPic.url} alt={catPic.id}/>
+          return <img src={catPic.url} alt={catPic.id} key={catPic.id}/>
         })}
       </div>
     );
   }
 };
+
+export default CatList;
