@@ -2,9 +2,9 @@ function catsReducer(state = [], action) {
   switch (action.type) {
 
     case 'FETCH_CATS':
-      return action.cats
+      return state
     case 'LOADING_CATS':
-      return action.cats
+      return state
     default:
       return state;
   }
