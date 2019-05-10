@@ -19,7 +19,7 @@ describe('async actions', () => {
     nock('http://localhost:4000')
       .get('/db')
       .reply(200, { images: [{url: "www.example.com/cat1"}, {url: 'www.example.com/cat2'}] })
-    
+
     const expectedActions = [
       {type: 'LOADING_CATS'},
       { type: "FETCH_CATS", payload: [{url: "www.example.com/cat1"}, {url: 'www.example.com/cat2'}] }
