@@ -18,7 +18,7 @@ import fetch from 'isomorphic-fetch';
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
-
+ 
 const images = [
 	{ url: 'www.example.com/cat1' },
 	{ url: 'www.example.com/cat2' }

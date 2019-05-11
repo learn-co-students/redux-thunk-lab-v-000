@@ -29,7 +29,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  return {catPics: state.pictures}
+  return {catPics: state.catsReducer.pictures}
 }
 
 export default connect(mapStateToProps, { fetchCats })(App)
