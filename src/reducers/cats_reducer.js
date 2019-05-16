@@ -14,7 +14,6 @@ export default function catsReducer(
     }
 
     case "FETCH_CATS": {
-      console.log(action.payload);
       return {
         ...state,
         loading: false,
