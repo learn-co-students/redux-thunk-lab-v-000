@@ -29,13 +29,13 @@ class App extends Component {
 }
 
 const mapStateToProps = state =>{
-  return { cats : state.cats.pictures }
+    return { cats : state.cats.pictures }
 }
 
-//function mapDispatchToProps(dispatch){
-  //return { fetchCats: () => dispatch(fetchCats()) }
-//}
+function mapDispatchToProps(dispatch){
+  return { fetchCats: () => dispatch(fetchCats()) }
+}
 
 
 
-export default connect(mapStateToProps, { fetchCats })(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
