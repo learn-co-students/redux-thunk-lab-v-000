@@ -4,7 +4,6 @@ export function fetchCats() {
     return fetch("http://localhost:4000/db")
       .then(resp => {
         return resp.json();
-        console.log("hiiii");
       })
       .then(cats => dispatch({ type: "FETCH_CATS", payload: cats.images }));
   };
