@@ -1,4 +1,4 @@
-export default function catsReducer(
+export function catsReducer(
   state = {
     loading: false,
     pictures: []
