@@ -1,12 +1,18 @@
-export function catsReducer(state=  [], action){
-  console.log(" i am in cats reducer")
-  switch (action.type){
-    case 'FETCH_CATS':
-        console.log(action.payload)
-        return action.payload;
-    case 'LOADING_CATS':
-        console.log(action.payload)
+export default function catsReducer(
+  state = {
+    pictures: [],
+    loading: false
+  },
+  action
+) {
+  switch (action.type) {
+    case "LOADING_CATS":
+      return { ...state, loading: true };
+
+    case "FETCH_CATS":
+      return { ...state, loading: false, pictures: action.payload };
+
     default:
-        return state;
+      return state;
   }
 }
