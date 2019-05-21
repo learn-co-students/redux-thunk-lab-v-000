@@ -1,7 +1,7 @@
-export default function catsReducer(
+export function catsReducer(
   state = {
-    pictures: [],
-    loading: false
+    loading: false,
+    pictures: []
   },
   action
 ) {

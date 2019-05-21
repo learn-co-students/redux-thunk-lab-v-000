@@ -10,7 +10,6 @@ class App extends Component {
 
   componentDidMount(){
     this.props.fetchCats()
-    console.log("i am in componentDidMount")
   }
 
   render() {
