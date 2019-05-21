@@ -1,4 +1,5 @@
 export function fetchCats(){
+  console.log("i am in fetch cats")
     return (dispatch) => {
       dispatch({ type: 'LOADING_CATS' });
       return fetch('http://localhost:4000/db')

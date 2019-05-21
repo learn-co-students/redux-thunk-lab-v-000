@@ -8,13 +8,14 @@ import { fetchCats } from './actions/catActions'
 class App extends Component {
 
   state = {
-    catPics: []
+    cats: []
   }
 
   componentDidMount(){
-    const catPics = this.props.fetchCats();
+    const catPics = this.props.fetchCats()
+    console.log("i am in componentDidMount")
     this.setState({
-      catPics: catPics
+      cats: catPics
     })
   }
 
@@ -28,13 +29,13 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
-        <CatList catPics={this.state.catPics} />
+        <CatList catPics={this.props.cats} />
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({catPics : state.cats })
+const mapStateToProps = state => ({cats : state.cats })
 
 function mapDispatchToProps(dispatch){
   return { fetchCats: () => dispatch(fetchCats()) }
