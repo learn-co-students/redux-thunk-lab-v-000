@@ -2,13 +2,13 @@ import catsReducer from '../src/reducers/cats_reducer'
 import expect from 'expect'
 
 describe('cats reducer', () => {
-  xit('should return the initial state', () => {
+  it('should return the initial state', () => {
     expect(
       catsReducer(undefined, {})
     ).toEqual({loading: false, pictures: []})
   })
 
-  xit('should handle the FETCH_CATS action', () => {
+  it('should handle the FETCH_CATS action', () => {
     const catPics = [{url: "www.example.com/cat1"}, {url: 'www.example.com/cat2'}]
     expect(
       catsReducer([], {
