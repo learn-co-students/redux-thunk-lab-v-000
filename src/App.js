@@ -2,36 +2,48 @@ import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap'
 import CatList from './CatList'
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actions from './actions/catActions'
 
-class App extends Component {
+export class App extends React.Component {
+  // componentDidMount will always be called automatically after
+  // render gets called by our component.
+
+  componentDidMount() {
+    if (this.props.catPics.length === 0){
+      this.props.actions.fetchCats()
+    }
+  }
 
   render() {
     return (
-      <div>
-        <div className="App">
-          <Navbar>
-            <Navbar.Header>
-              <Navbar.Brand>
-                <a href="#">CatBook</a>
-              </Navbar.Brand>
-            </Navbar.Header>
-          </Navbar>
-        </div>
-
-        <CatList />
+      <div className="App">
+        <Navbar>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="#">CatBook</a>
+            </Navbar.Brand>
+          </Navbar.Header>
+        </Navbar>
+        <CatList catPics={this.props.catPics} />
       </div>
     );
   }
+}
 
-  componentDidMount(){
-    fetch('http://localhost:4000/db')
-    .then(response => response.json())
-    .then(({cats}) => this.fetchCats(cats))
+
+  function mapStateToProps(state) {
+    return {catPics: state.cats.pictures}
   }
 
+  function mapDispatchToProps(dispatch) {
+  return {actions: bindActionCreators(actions, dispatch)}
+  }
 
-const mapDispatchToProps = dispatch => ({
-  fetchCats: cats => dispatch({type: 'FETCH_CATS', cats})
-})
+  // function mapDispatchToProps(dispatch){
+  //   return {
+  //     fetchCats: (cats) => {dispatch({type: 'FETCH_CATS', cats: cats })}
+  //   }
+  // }
 
-export default connect (null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

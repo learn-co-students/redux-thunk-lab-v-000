@@ -7,10 +7,12 @@ export default function catsReducer(
     {
       switch(action.type){
         case 'LOADING_CATS':
-          return 'loading...'
-
+          return {...state, loading: true}
         case 'FETCH_CATS':
-          return 'fetching...'
+          return {
+            loading: false,
+            pictures: action.payload
+          }
         default:
           return state;
 
