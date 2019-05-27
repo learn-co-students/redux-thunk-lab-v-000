@@ -10,12 +10,7 @@ export default function catsReducer(
           return 'loading...'
 
         case 'FETCH_CATS':
-          // cost cats = fetch('http://localhost:4000/db').then(response => {
-          //               return response.json()
-          //             }).then(responseJSON => {
-          //               return responseJSON.images
-          //             })
-
+          return 'fetching...'
         default:
           return state;
 
