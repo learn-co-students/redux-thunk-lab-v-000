@@ -38,7 +38,7 @@ describe('<App/>', function() {
 		global.fetch = fetch;
 
 		const props = {
-			catPics: images
+			catPictures: images
 		};
 
 		const mockStore = configureStore([]);
