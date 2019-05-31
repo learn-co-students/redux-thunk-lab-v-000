@@ -61,7 +61,7 @@ a payload of the `cats` collection.
 #### Part 2: Build the Container Component
 
 Your `App` component should use `connect` and `mapStateToProps` to set a prop of
-`catPics` to the cats collection in state.
+`catPictures` to the cats collection in state.
 
 #### Dispatching the `fetchCats` action
 
@@ -103,14 +103,14 @@ specifically from inside the  `componentDidMount` function. We'll need to use
 from within our component.
 
 Once you successfully fetch cats, put them in state, grab them from state and
-pass them to `App` under the `catPics` prop, you're ready to build the `CatList`
+pass them to `App` under the `catPictures` prop, you're ready to build the `CatList`
 component.
 
 #### The Presentational Component
 
 Your container component, `App`, should render the presentational component,
-`CatList`. `App` should pass `catPics` down to `CatList` as a prop. `CatList`
+`CatList`. `App` should pass `catPictures` down to `CatList` as a prop. `CatList`
 should iterate over the cat pics and display each cat pic in an image URL.
-Remember to use debugger to take a look at the `catPics` collection and
+Remember to use debugger to take a look at the `catPictures` collection and
 determine which property of each `catPic` object you will use to populate your
 `<img>` tag and render the image.

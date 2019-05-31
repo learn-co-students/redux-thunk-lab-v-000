@@ -9,12 +9,12 @@ describe('cats reducer', () => {
   })
 
   it('should handle the FETCH_CATS action', () => {
-    const catPics = [{url: "www.example.com/cat1"}, {url: 'www.example.com/cat2'}]
+    const catPictures = [{url: "www.example.com/cat1"}, {url: 'www.example.com/cat2'}]
     expect(
       catsReducer([], {
         type: 'FETCH_CATS',
-        payload:  catPics
+        payload:  catPictures
       })
-    ).toEqual({loading: false, pictures: catPics})
+    ).toEqual({loading: false, pictures: catPictures})
   })
 })
