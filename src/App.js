@@ -6,6 +6,9 @@ import { bindActionCreators } from "redux";
 import * as actions from "./actions/catActions";
 
 class App extends Component {
+  componentDidMount = () => {
+    this.props.actions.fetchCats();
+  };
   render() {
     return (
       <div className="App">
@@ -20,9 +23,6 @@ class App extends Component {
       </div>
     );
   }
-  componentDidMount = () => {
-    this.props.fetchCats();
-  };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -37,5 +37,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  { ...actions }
+  mapDispatchToProps
 )(App);
