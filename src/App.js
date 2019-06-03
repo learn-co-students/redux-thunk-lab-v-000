@@ -3,11 +3,12 @@ import { Navbar } from "react-bootstrap";
 import CatList from "./CatList.js";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import * as actions from "./actions/catActions";
+// import * as actions from "./actions/catActions";
+import { fetchCats } from "./actions/catActions";
 
 class App extends Component {
   componentDidMount = () => {
-    this.props.actions.fetchCats();
+    this.props.fetchCats();
   };
   render() {
     return (
@@ -25,11 +26,11 @@ class App extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(actions, dispatch)
-  };
-}
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     actions: bindActionCreators(actions, dispatch)
+//   };
+// }
 
 function mapStateToProps(state) {
   return { catPics: state.cats.pictures };
@@ -37,5 +38,5 @@ function mapStateToProps(state) {
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  { fetchCats }
 )(App);
