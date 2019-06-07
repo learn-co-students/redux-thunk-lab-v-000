@@ -1,4 +1,4 @@
-export function catsReducer(state = { cats: []}, action) {
+export default function catsReducer(state = {loading: false, pictures: []}, action) {
   switch(action.type) {
     case "LOADING_CATS":
       return state
@@ -6,7 +6,8 @@ export function catsReducer(state = { cats: []}, action) {
     case "FETCH_CATS":
 
       return {
-        cats: state.cats.concat(action.payload)
+        loading: false,
+        pictures: action.payload
       }
         
     default:
