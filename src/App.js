@@ -28,10 +28,10 @@ class App extends Component {
 	}
 }
 
-const mapStateToProps = state =>  ({ catPics: state.pictures })
+const mapStateToProps = ({cats}) =>  ({ catPics: state.pictures })
 
 const mapDispatchToProps = dispatch => ({
-   actions: pictures => dispatch(actions, dispatch) }) 
+   actions: pictures => dispatch(actions, dispatch) })
 
 
 
