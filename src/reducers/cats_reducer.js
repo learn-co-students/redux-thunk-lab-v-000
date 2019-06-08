@@ -6,7 +6,7 @@ export default function catsReducer(state= {loading: false, pictures: []}, actio
       return Object.assign({}, state, {loading: true})
 
     case 'FETCH_CATS':
-      return {...state, loading: false, pictures: action.payload}
+      return { loading: false, pictures: action.payload}
 
     default:
       return state;
