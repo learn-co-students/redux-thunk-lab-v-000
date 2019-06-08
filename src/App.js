@@ -18,7 +18,7 @@ class App extends Component {
 				<Navbar>
 					<Navbar.Header>
 						<Navbar.Brand>
-							<a href="#">CatBook</a>
+							<a href="CatBook">CatBook</a>
 						</Navbar.Brand>
 					</Navbar.Header>
 				</Navbar>
@@ -28,11 +28,11 @@ class App extends Component {
 	}
 }
 
-const mapStateToProps = ({cats}) =>  ({ catPics: state.pictures })
+const mapStateToProps = state =>  ({ catPics: state.pictures })
 
 const mapDispatchToProps = dispatch => ({
    actions: pictures => dispatch(actions, dispatch) })
 
 
 
-export default connect(null, mapStateToProps)(App)
+export default connect(mapStateToProps,mapDispatchToProps)(App)
