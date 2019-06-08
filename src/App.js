@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap'
 import CatList from './CatList';
-// import { connect } from 'react-redux';
-// import * as actions from './actions/catActions.js';
+import { connect } from 'react-redux';
+import * as actions from './actions/catActions.js';
 
 class App extends Component {
+
 	componentDidMount() {
 		if (this.props.catPics.length === 0) {
 			console.log('in component did mount');
@@ -27,5 +28,11 @@ class App extends Component {
 	}
 }
 
+const mapStateToProps = state =>  ({ catPics: state.pictures })
 
-export default App
+const mapDispatchToProps = dispatch => ({
+   actions: pictures => dispatch(actions, dispatch) }) 
+
+
+
+export default connect(null, mapStateToProps)(App)

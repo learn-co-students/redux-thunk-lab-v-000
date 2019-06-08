@@ -2,7 +2,7 @@ import React from 'react'
 
 const CatList = (props) => {
   function listCats() {
-debugger
+    debugger
     return props.catPics.map((catPic, idx) => {
       return (
         <div key={idx} className="col-lg-12">
