@@ -7,8 +7,8 @@ export const fetchCats = () => {
             .then(response => response.json())
             .then(JSONImgs => {
                 console.log('[SERVER_RESP]: ', JSONImgs)
-                const cats = JSONImgs
-                dispatch({type: 'FETCH_CATS', cats})
+                const cats = JSONImgs.images
+                dispatch({type: 'FETCH_CATS', payload: cats})
             })
             .catch(err=>console.log('[FETCH_ERROR]: ', err))
     }
