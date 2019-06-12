@@ -16,6 +16,7 @@ class App extends Component {
 
   componentDidMount() {
     this.props.fetchCats()
+
   }
   
   render() {
@@ -28,7 +29,7 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
-        <CatList catPics={this.state.pictures}/>
+        <CatList catPics={this.props.catPics}/>
       </div>
     );
   }
@@ -36,7 +37,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    catPics: state.pictures
+    catPics: state.cats.pictures
   }
 }
 
