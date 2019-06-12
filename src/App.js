@@ -9,16 +9,13 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      catPics: []
+      loading: false,
+      pictures: []
     }
   }
 
   componentDidMount() {
-    const cats = this.props.fetchCats()
-    this.setState({
-      catPics: cats
-    })
-    console.log('cats: ', cats)
+    this.props.fetchCats()
   }
   
   render() {
@@ -31,7 +28,7 @@ class App extends Component {
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
-        <CatList catPics={this.state.catPics}/>
+        <CatList catPics={this.state.pictures}/>
       </div>
     );
   }
@@ -39,7 +36,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    catPics: state.cats
+    catPics: state.pictures
   }
 }
 
