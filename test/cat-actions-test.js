@@ -5,7 +5,6 @@ import expect, { createSpy, spyOn, isSpy } from 'expect'
 import nock from 'nock'
 import fetch from 'isomorphic-fetch';
 
-
 // change to redux thunk
 const middlewares = [ thunk ]
 const mockStore = configureMockStore(middlewares)
