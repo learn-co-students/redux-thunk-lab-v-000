@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 
 class CatList extends Component {
-    catImages = () => this.props.catPics.map( (pic, id) => 
+    
+    catImages = () => this.props.catPics.map( (picture, id) => 
         <li key={id}>
-            <img src={pic.url} />
+            <img src={picture.url} alt={id} />
         </li>
     )
 
     render() {
+        console.log(this.props.catPics)
         return (
             <div>
-            {console.log(this.props.catPics)}
+            {/* This next line returns an error saying this.props.catPics is undefined */}
             {/* {this.catImages()} */}
             </div>
         )
@@ -19,7 +21,8 @@ class CatList extends Component {
 
 export default CatList;
 
-// Formatting of cat db:
+
+// Formatting of cat db for reference:
 // {
 //   "images": [
 //     {
