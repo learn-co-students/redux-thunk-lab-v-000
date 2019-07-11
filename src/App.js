@@ -10,7 +10,7 @@ class App extends Component {
   componentDidMount() {
     this.props.fetchCats()
   }
-
+  
 
   render() {
     return (
@@ -20,7 +20,7 @@ class App extends Component {
             <Navbar.Brand>
               <a href="#">CatBook</a>
               <br />
-              <CatList catPics={this.props.catPics} />
+              <CatList catPics={this.props.pictures} loading={this.props.loading} />
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
@@ -30,9 +30,10 @@ class App extends Component {
 
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    catPics: state.pictures
+    loading: state.loading,
+    pictures: state.pictures
   }
 }
 

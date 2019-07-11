@@ -9,9 +9,13 @@ class CatList extends Component {
     )
 
     render() {
+        // for testing purposes:
         console.log(this.props.catPics)
+        console.log(this.props.loading)
+        
         return (
             <div>
+            We are inside the CatList render method...
             {/* This next line returns an error saying this.props.catPics is undefined */}
             {/* {this.catImages()} */}
             </div>

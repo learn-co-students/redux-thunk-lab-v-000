@@ -5,11 +5,13 @@ export default function catsReducer(state = {
     switch (action.type) {
 
         case 'LOADING_CATS':
-            return state
+            return {
+                ...state, loading: true
+            }
 
 
         case 'FETCH_CATS':
-            // log the new state for testing visibility:
+            // log the new state for testing:
             const newState = {
                 ...state,
                 loading: false,
@@ -17,7 +19,7 @@ export default function catsReducer(state = {
               }
             console.log(newState)
             
-            // This way also doesn't re-render the CatList component either:
+            // The following line also doesn't re-render the CatList component either:
             // return Object.assign({}, state, {pictures: action.payload})
 
             return {
