@@ -4,8 +4,8 @@ export function fetchCats() {
         return fetch('http://localhost:4000/db')
         .then(res => res.json())
         .then(catsData => {
-            let payload = catsData.images;
-            dispatch({ type: 'FETCH_CATS', payload})
+            // let payload = catsData.images;
+            dispatch({ type: 'FETCH_CATS', payload: catsData.images})
         })
     };
 }

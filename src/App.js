@@ -13,6 +13,7 @@ class App extends Component {
   
 
   render() {
+    console.log(this.props)
     return (
       <div className="App">
         <Navbar>
@@ -31,6 +32,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
+  // debugger
   return {
     loading: state.loading,
     pictures: state.pictures
