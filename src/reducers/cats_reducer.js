@@ -11,18 +11,7 @@ export default function catsReducer(state = {
 
 
         case 'FETCH_CATS':
-            // log the new state for testing:
-            const newState = {
-                ...state,
-                loading: false,
-                pictures: action.payload
-              }
-            console.log(newState)
-            
-            // The following line also doesn't re-render the CatList component either:
-            // return Object.assign({}, state, {pictures: action.payload})
-
-            return {
+             return {
                 ...state,
                 loading: false,
                 pictures: action.payload
