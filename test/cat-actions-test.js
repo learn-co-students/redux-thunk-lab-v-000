@@ -27,6 +27,7 @@ describe('async actions', () => {
 
     const store = mockStore({})
     global.fetch = fetch
+    console.log(store)
 
     return store.dispatch(actions.fetchCats())
       .then(() => { // return of async actions
