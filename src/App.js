@@ -8,13 +8,7 @@ import CatList from './CatList';
 
 class App extends Component {
 	componentDidMount() {
-		debugger;
-		if (this.props.catPics.length === 0) {
-			// this.props.cats();
-			this.props.fetchCats.fetchCats();
-		}
-		// debugger;
-		// console.log(this.props.catPics);
+		this.props.fetchCats();
 	}
 
 	render() {
@@ -36,13 +30,12 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-	// debugger;
 	return { catPics: state.cats.pictures };
 };
 
-const mapDispatchToProps = (dispatch) => {
-	return { fetchCats: bindActionCreators(fetchCats, dispatch) };
-};
+// const mapDispatchToProps = (dispatch) => {
+// 	return { fetchCats: bindActionCreators(fetchCats, dispatch) };
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, { fetchCats })(App);
 // export default App;

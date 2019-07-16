@@ -5,12 +5,13 @@ export default function catsReducer(
 	},
 	action
 ) {
-	// console.log(action);
-	// debugger;
 	switch (action.type) {
 		case 'FETCH_CATS':
-			// console.log(action);
-			return state.pictures;
+			return {
+				...state,
+				loading: false,
+				pictures: action.payload
+			};
 		case 'LOADING_CATS':
 			return {
 				...state,
