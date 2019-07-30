@@ -1,5 +1,8 @@
 export function fetchCats() {
-  const cats = fetch('http://localhost:4000/db')
-    .then(res => res.json())
-    .then(cats => ({type: 'FETCH_CATS', payload: cats.images}) )
+  return (dispatch) => {
+    dispatch({type: 'LOADING_CATS'});
+    return fetch('http://localhost:4000/db')
+      .then(res => res.json())
+      .then(cats => dispatch({type: 'FETCH_CATS', payload: cats.images}));
+  };
 }
