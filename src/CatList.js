@@ -7,10 +7,11 @@ class CatList extends Component {
     const cats = this.props.catPics.map(cat => <li><img>cat</img></li>)
     
     return(
-      <ul>
-        {cats}
-      </ul>
-      
+      <div>
+        <ul>
+          {cats}
+        </ul>
+      </div>
     )
   }
 }
