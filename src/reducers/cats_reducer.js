@@ -7,10 +7,10 @@ export default function catsReducer(state = {}, action) {
         }
   
         case 'FETCH_CATS':
-
-        return { 
-
-        }
+            return {
+                pictures: action.payload,
+                loading: false
+            }
 
         default:
             return state;
