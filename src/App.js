@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap'
 
 class App extends Component {   
-  
+  componentDidMount() {
+    
+  }
+
   render() {
     return (
       <div className="App">
