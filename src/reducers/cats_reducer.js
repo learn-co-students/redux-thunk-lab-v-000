@@ -1,10 +1,9 @@
 export default function catsReducer(state = {}, action) {
     switch (action.type) {
         case 'LOADING_CATS':
-        
-        return {
-          
-        }
+            return {    
+                ...state, loading: true
+            }
   
         case 'FETCH_CATS':
             return {
