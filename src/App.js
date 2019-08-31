@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap'
+import CatList from './CatList';
+import { connect } from 'react-redux';
+import { fetchCats } from './actions/catActions'
 
 class App extends Component {   
   componentDidMount() {
-    
+    if (this.props.catPics.length === 0) {
+      this.props.fetchCats()
+    }
   }
 
   render() {
@@ -21,7 +26,4 @@ class App extends Component {
   }
 }
 
-
-
 export default App
-
