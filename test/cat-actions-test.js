@@ -1,6 +1,7 @@
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 import * as actions from '../src/actions/catActions'
+import fetchCats from '../src/actions/catActions'
 import expect, { createSpy, spyOn, isSpy } from 'expect'
 import nock from 'nock'
 import fetch from 'isomorphic-fetch';
@@ -28,7 +29,7 @@ describe('async actions', () => {
     const store = mockStore({})
     global.fetch = fetch
 
-    return store.dispatch(actions.fetchCats())
+    return store.dispatch(fetchCats())
       .then(() => { // return of async actions
         expect(store.getActions()).toEqual(expectedActions)
       })
