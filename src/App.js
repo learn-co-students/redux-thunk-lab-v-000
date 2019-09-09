@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import {Navbar} from 'react-bootstrap'
+import { fetchCats } from './actions/catActions';
+import CatList from './CatList';
+import { connect } from 'react-redux';
 
 class App extends Component {   
+
+  componentDidMount() {
+    this.props.fetchCats();
+  }
   
   render() {
     return (
@@ -9,7 +16,7 @@ class App extends Component {
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">CatBook</a>
+              <a href="#"><CatList catPics={this.props.catPics} /></a>
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
@@ -18,7 +25,15 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = ({cats}) => ({catPics: cats.pictures})
 
 
-export default App
 
+const mapDispatchToProps = dispatch => {
+  return {
+  fetchCats: fetchCats
+}
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
