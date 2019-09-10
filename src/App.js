@@ -6,7 +6,7 @@ import { fetchCats } from './actions/catActions'
 class App extends Component {
 
   componentDidMount() {
-    debugger
+    // debugger
     this.props.dispatch(fetchCats());
   }
 
@@ -18,7 +18,7 @@ class App extends Component {
           <Navbar.Header>
             <Navbar.Brand>
               <a href="#">CatBook</a>
-              {/* <CatList /> */}
+              {/* <CatList  catPics={catPics}/> */}
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
@@ -27,8 +27,8 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { catPics: state.cats }
+const mapStateToProps = (cats) => {
+  return { catPics: cats }
 }
 
 export default connect(mapStateToProps, { fetchCats })(App)
