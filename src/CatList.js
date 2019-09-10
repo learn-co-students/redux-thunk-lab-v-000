@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const CatList = () => {
-  return (
-    <div>
+class CatList extends Component {
 
-    </div>
-  );
-};
+  render() {
+    return (
+      <div>
+
+      </div >
+    )
+  }
+}
 
 export default CatList;
 
