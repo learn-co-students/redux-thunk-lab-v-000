@@ -1,9 +1,8 @@
 export default function catsReducer(
-  state = { loading: false, pictures: {} },
+  state = { loading: false, pictures: [] },
   action) {
   switch (action.type) {
     case 'LOADING_CATS':
-      debugger
       return {
         ...state,
         loading: true

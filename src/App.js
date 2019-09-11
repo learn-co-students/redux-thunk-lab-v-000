@@ -9,18 +9,21 @@ class App extends Component {
   componentDidMount() {
     const { fetchCats } = this.props;
     fetchCats();
+    debugger
   }
 
 
   render() {
     console.log('in App - this.props', this.props)
+    console.log('in App - this.props.pictures', this.props.fetchCats)
+    // debugger
     return (
       <div className="App">
         <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
               <a href="#">CatBook</a>
-              <CatList catPics={this.props.cats} />
+              <CatList catPics={this.props.pictures} />
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
@@ -29,9 +32,10 @@ class App extends Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   return { state: cats }
-// }
-const mapStateToProps = ({ pictures }) => ({ pictures })
+const mapStateToProps = (state) => {
+  // debugger
+  return state
+}
+// const mapStateToProps = ({ pictures }) => ({ pictures })
 
 export default connect(mapStateToProps, { fetchCats })(App)

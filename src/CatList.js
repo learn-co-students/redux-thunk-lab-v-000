@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 class CatList extends Component {
 
   render() {
+    console.log(this.props.pictures)
     return (
       <div>
 
