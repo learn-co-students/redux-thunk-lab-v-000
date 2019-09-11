@@ -1,4 +1,9 @@
-// import { loadingCats } from '../actions'
+// import { loadingCats, fetchCats } from '../actions'
+// export function loadingCats() {
+//   return {
+//     type: 'LOADING_CATS'
+//   }
+// }
 
 
 export function fetchCats() {

@@ -9,11 +9,12 @@ class App extends Component {
   componentDidMount() {
     const { fetchCats } = this.props;
     fetchCats();
-    debugger
   }
 
 
   render() {
+    // const { fetchCats } = this.props;
+
     console.log('in App - this.props', this.props)
     console.log('in App - this.props.pictures', this.props.fetchCats)
     // debugger
@@ -23,7 +24,7 @@ class App extends Component {
           <Navbar.Header>
             <Navbar.Brand>
               <a href="#">CatBook</a>
-              <CatList catPics={this.props.pictures} />
+              <CatList catPics={this.props.pictures} fetchCats={this.props.fetchCats} />
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
@@ -34,8 +35,11 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   // debugger
-  return state
+  const catPics = state.catsReducer
+  return catPics
 }
 // const mapStateToProps = ({ pictures }) => ({ pictures })
+//* Your App component should use connect and mapStateToProps to set a prop of catPics to the cats collection in state.
+
 
 export default connect(mapStateToProps, { fetchCats })(App)
