@@ -3,10 +3,14 @@ import React, { Component } from 'react';
 class CatList extends Component {
 
   render() {
-    console.log('in CatList - this.props', this.props)
+    const { catPics } = this.props
+    const catPicsArray = catPics.map((img) => {
+      return < img src={img.url} alt={img.id} />
+    })
     return (
-      <div>
-
+      < div >
+        <li>{catPicsArray}</li>
+        <p>hey from catlist</p>
       </div >
     )
   }
@@ -14,5 +18,3 @@ class CatList extends Component {
 
 export default CatList;
 
-
-//CatList, which will receive the list of cat pics from App and render them in a series of <img> tags.
