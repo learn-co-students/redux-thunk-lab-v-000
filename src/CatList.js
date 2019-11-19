@@ -3,21 +3,16 @@
 import React from 'react';
 
 const CatList = (props) => {
+    props.map((catImage => 
 
-    // debugger
-    render() {
-
-        return (
-
-    <div>
-    <img>
-    {props.fetchCats}
+        <img>
+       {  catImage}
         </img>
-  </div>
+      
     
-        )
-    } 
-// 
+    ))
+        
+
 }
 
 
