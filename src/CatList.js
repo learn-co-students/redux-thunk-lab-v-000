@@ -3,14 +3,15 @@
 import React from 'react';
 
 const CatList = (props) => {
-    props.map((catImage => 
+    var images = props.catPics.map((catImage) => {
 
-        <img>
-       {  catImage}
-        </img>
+      return <img src= {catImage.url} />
+     
+         
       
-    
-    ))
+    }
+    )
+    return <div>{images}</div>
         
 
 }
