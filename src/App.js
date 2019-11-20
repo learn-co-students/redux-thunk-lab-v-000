@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCats } from './actions/catActions'
+import {catList} from './components/CatList'
 
 class App extends Component { 
   
   componentDidMount() {
-    console.log(this.props)
     this.props.fetchCats()
+  }
+  
+  handleLoading = () => {
+    if(this.props.loading) {
+      return <div>Loading...</div>
+    } else {
+      return <CatList catPics={this.props.catPics} />
+    }
   }
   
   render() {
     return (
       <div>
         <h1>CatBook</h1>
-        {/* add CatList component here */}
+         {this.handleLoading()}
       </div>
     );
   }
