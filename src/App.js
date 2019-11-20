@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCats } from './actions/catActions'
-import {catList} from './components/CatList'
+import CatList from './CatList'
 
 class App extends Component { 
   
@@ -19,7 +19,7 @@ class App extends Component {
   
   render() {
     return (
-      <div>
+      <div className="App">
         <h1>CatBook</h1>
          {this.handleLoading()}
       </div>
