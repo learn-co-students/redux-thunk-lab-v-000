@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>CatBook</h1>
-        {this.props.catPics.map(catPic => <CatList key={catPic.id} sourceUrl={catPic.source_url} />)}
+        <CatList catPics={this.props.catPics} />
       </div>
     );
   }
