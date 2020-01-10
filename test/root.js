@@ -20,4 +20,4 @@ global.fetch = require('node-fetch')
 
 global.navigator = {
   userAgent: 'node.js'
-};  
+};
