@@ -7,7 +7,7 @@ class CatList extends Component {
     const { catPics } = this.props
     return (
       <ul>
-        {catPics.map(catPic => <li><img src={catPic.url} /></li>)}
+        {catPics.map(cat => <li><img key={cat.id} src={cat.url} alt={cat.id}/></li>)}
       </ul>
     )
   }
