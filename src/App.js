@@ -11,16 +11,12 @@ class App extends Component {
 
   render() {
     console.log(this.props.catPics)
-    // if(this.props.loading === true) {
       return (
         <div className="App">
           <h1>CatBook</h1>
           {this.props.loading ? <h2>Cats Incoming!</h2> : <CatList catPics={this.props.catPics} />}
         </div>
       );
-    // } else {
-    //   return <h2>Cats Incoming!</h2>
-    // }
   }
 }
 
