@@ -1,8 +1,8 @@
 export function fetchCats() {
   return (dispatch) => {
-    dispatch({ type: 'START_ADDING_CATS_REQUEST' });
+    dispatch({ type: 'LOADING_CATS' });
     fetch('https://learn-co-curriculum.github.io/cat-api/cats.json')
       .then(response => response.json())
-      .then(cats => dispatch({ type: 'ADD_CATS', cats }));
+      .then(responseJSON => dispatch({ type: 'ADD_CATS', cats: responseJSON.images }));
   };
 }

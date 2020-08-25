@@ -1,21 +1,20 @@
-function catsReducer(state = { cats: [], requesting: false }, action) {
-  switch (action.type) {
- 
-    case 'START_ADDING_CATS_REQUEST':
+const catsReducer = (state = { cats: [], loading: false }, action) => {
+  switch(action.type) {
+    case 'LOADING_CATS':
       return {
         ...state,
         cats: [...state.cats],
-        requesting: true
+        loading: true
       }
- 
     case 'ADD_CATS':
       return {
         ...state,
         cats: action.cats,
-        requesting: false
+        loading: false
       }
- 
     default:
       return state;
   }
-};
+}
+ 
+export default catsReducer;
