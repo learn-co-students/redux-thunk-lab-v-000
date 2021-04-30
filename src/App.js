@@ -9,6 +9,14 @@ class App extends Component {
     console.log(this.props)
     this.props.fetchCats()
   }
+
+  loading = () => {
+  	if (this.props.loading){
+  		return <p>Loading....</p>
+  	} else {
+  		return <CatList catPics={this.props.catPics} />
+  	}
+  }
  
   render() {
     console.log(this.props.catPics) // log will fire every time App renders
@@ -16,7 +24,7 @@ class App extends Component {
       <div className="App">
         <h1>CatBook</h1>
         {/* missing component */}
-        <CatList catPics={this.props.catPics} />
+        {this.loading()}
       </div>
     );
   }
