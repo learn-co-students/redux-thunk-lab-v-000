@@ -11,6 +11,7 @@ class App extends Component {
   }
 
   render() {
+    console.log("Updated");
     console.log(this.props.catPics);
     return (
       <div className="App">
