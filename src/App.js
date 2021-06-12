@@ -17,6 +17,7 @@ class App extends Component {
         return (
             <div className="App">
                 <h1>CatBook</h1>
+                {!!this.props.load?"Loading...":null}
                 <CatList catPics={this.props.catPics}/>
             </div>
     )}
